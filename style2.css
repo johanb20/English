@@ -4,34 +4,58 @@ body{
       justify-content: center;
       flex-direction: column;
       align-items: center;
-      margin: 0;
       padding: 0;
+      margin: 0;
 }
-h1, h2, h3, h4, li, p, caption{
+.unit-content {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+}
+h1{
+      font-size: 25px;
+}
+h1, h2, h3, h4 {
+      text-align: center;
       font-family: Arial, Helvetica, sans-serif;
+}
+li, p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 19px;
+      font-weight: 500;
+      margin: 0 20px;
 }
 caption {
       caption-side: top;
       text-align: center;
       font-weight: bold;
       margin-bottom: 6px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 22px;
 }
-hr{ border: 0.5px solid black; width: 100%; margin: 0; }
+hr{ 
+      border: 0.5px solid rgb(2, 30, 121);
+      width: 100%;
+      margin: 0;
+}
 table {
       border-collapse: collapse;
       width: 100%;
       max-width: 800px;
 }
 th, td {
-      border: 1px solid #000000;
+      border: 1px solid rgb(2, 30, 121);
       padding: 8px 10px;
       text-align: left;
       vertical-align: middle;
       background: #C5D8E6;
       text-align: center;
-      font-family: Arial, Helvetica, sans-serif
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
 }
 thead th {
+      font-weight: bold;
       background: #90AFC5;
 }
 .highlight {
@@ -39,11 +63,16 @@ thead th {
       background-color: #A7B3C2;
 }
 .background {
-      background-color: #5D8AA8;
+      background-color: #7aa6c4;
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+}
+.background:hover {
+      background-color: #3674afc7;
+      color: white;
+      transform: scale(1.05);
 }
 .link {
       font-family: Arial, Helvetica, sans-serif;
@@ -53,4 +82,67 @@ thead th {
 }
 .link:hover {
       text-decoration: underline;
+}
+
+.unit-header {
+  cursor: pointer;
+}
+
+.unit-content {
+  display: none;
+}
+
+.unit-content.active {
+  display: block;
+}
+
+@media (max-width: 600px) {
+
+      body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+      }
+      h1{
+            font-size: 22px;
+      } 
+      h1, h2, h3, h4 {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0 20px;
+      }
+      caption{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            padding: 10PX 20px;
+      }
+      li, p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            margin: 0 20PX;
+            font-weight: 500;
+      }
+      caption {
+            caption-side: top;
+            text-align: center;
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 6px;
+            margin: 0 20PX;
+      }
+      table {
+            width: 100%;
+            max-width: 100%;
+            font-size: 15px;
+            display: block;
+            overflow-x: auto;
+            padding: 0 20px;
+      }
+      th, td {
+            padding: 6px;
+            font-size: 15px;
+            font-weight: 500;
+      }
 }
