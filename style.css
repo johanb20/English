@@ -142,7 +142,7 @@ thead th {
 }
 
 .card img {
-  width: 100%;
+  width: 70%;
   height: 150px;
   object-fit: cover;
   border-radius: 8px;
