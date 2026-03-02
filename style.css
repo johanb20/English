@@ -158,6 +158,11 @@ thead th {
   color: gray;
   margin-top: 5px;
 }
+
+a.card {
+  text-decoration: none;
+  color: inherit;
+}
 @media (max-width: 600px) {
 
       body {
