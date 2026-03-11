@@ -5,695 +5,731 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <script src="images-api.js"></script>
-    <title>Complement</title>
+    <script src="images-api.js" defer></script>
+    <title>Vocabulary</title>
 </head>
-<body>
-    <hr>
-    <div class="background unit-header" data-target="unit1">
-        <h1>⚙️ Verbs</h1>
+<body class="theme-vocabulary">
+
+    <!-- BOTÓN FLOTANTE DEL MENÚ PRINCIPAL -->
+    <div class="menu-floating-btn" onclick="toggleMenu()">
+        <span class="menu-icon">☰</span>
+        <span class="menu-text">MENU</span>
     </div>
-    <hr>
-    <div id="unit1" class="unit-content">
-        <br>
-        <table>
-        <caption>Irregular Verbs</caption>
-        <thead>
-            <th>Emoji</th><th>Base Form</th><th>Past</th><th>Past Participle</th><th>Spanish</th>
-        </thead>
-        <tbody>
-            <tr><td>🌅</td><td>Arise</td><td>Arose</td><td>Arisen</td><td>Surgir, levantarse</td></tr>
-            <tr><td>⏰</td><td>Awake</td><td>Awoke</td><td>Awoken</td><td>Despertarse</td></tr>
-            <tr><td>🧍</td><td>Be (am, is, are)</td><td>Was / Were</td><td>Been</td><td>Ser / Estar</td></tr>
-            <tr><td>👶</td><td>Bear</td><td>Bore</td><td>Born / Borne</td><td>Soportar, dar a luz</td></tr>
-            <tr><td>🥊</td><td>Beat</td><td>Beat</td><td>Beaten</td><td>Golpear</td></tr>
-            <tr><td>✨</td><td>Become</td><td>Became</td><td>Become</td><td>Llegar a ser</td></tr>
-            <tr><td>🚀</td><td>Begin</td><td>Began</td><td>Begun</td><td>Empezar</td></tr>
-            <tr><td>🔄</td><td>Bend</td><td>Bent</td><td>Bent</td><td>Doblar</td></tr>
-            <tr><td>🎲</td><td>Bet</td><td>Bet</td><td>Bet</td><td>Apostar</td></tr>
-            <tr><td>🔗</td><td>Bind</td><td>Bound</td><td>Bound</td><td>Atar, encuadernar</td></tr>
-            <tr><td>💰</td><td>Bid</td><td>Bid</td><td>Bid</td><td>Pujar</td></tr>
-            <tr><td>🐍</td><td>Bite</td><td>Bit</td><td>Bitten</td><td>Morder</td></tr>
-            <tr><td>🩸</td><td>Bleed</td><td>Bled</td><td>Bled</td><td>Sangrar</td></tr>
-            <tr><td>🌬️</td><td>Blow</td><td>Blew</td><td>Blown</td><td>Soplar</td></tr>
-            <tr><td>💥</td><td>Break</td><td>Broke</td><td>Broken</td><td>Romper</td></tr>
-            <tr><td>🐶</td><td>Bring</td><td>Brought</td><td>Brought</td><td>Traer / Llevar</td></tr>
-            <tr><td>🏗️</td><td>Build</td><td>Built</td><td>Built</td><td>Construir</td></tr>
-            <tr><td>🛒</td><td>Buy</td><td>Bought</td><td>Bought</td><td>Comprar</td></tr>
-            <tr><td>🎯</td><td>Catch</td><td>Caught</td><td>Caught</td><td>Atrapar</td></tr>
-            <tr><td>🚶</td><td>Come</td><td>Came</td><td>Come</td><td>Venir</td></tr>
-            <tr><td>✂️</td><td>Cut</td><td>Cut</td><td>Cut</td><td>Cortar</td></tr>
-            <tr><td>🗳️</td><td>Choose</td><td>Chose</td><td>Chosen</td><td>Elegir</td></tr>
-            <tr><td>💪</td><td>Do</td><td>Did</td><td>Done</td><td>Hacer</td></tr>
-            <tr><td>🎨</td><td>Draw</td><td>Drew</td><td>Drawn</td><td>Dibujar</td></tr>
-            <tr><td>🥤</td><td>Drink</td><td>Drank</td><td>Drunk</td><td>Beber</td></tr>
-            <tr><td>🚗</td><td>Drive</td><td>Drove</td><td>Driven</td><td>Conducir</td></tr>
-            <tr><td>🍽️</td><td>Eat</td><td>Ate</td><td>Eaten</td><td>Comer</td></tr>
-            <tr><td>💧</td><td>Fall</td><td>Fell</td><td>Fallen</td><td>Caer</td></tr>
-            <tr><td>🧠</td><td>Feel</td><td>Felt</td><td>Felt</td><td>Sentir</td></tr>
-            <tr><td>🔍</td><td>Find</td><td>Found</td><td>Found</td><td>Encontrar</td></tr>
-            <tr><td>✈️</td><td>Fly</td><td>Flew</td><td>Flown</td><td>Volar</td></tr>
-            <tr><td>🧊</td><td>Freeze</td><td>Froze</td><td>Frozen</td><td>Congelar</td></tr>
-            <tr><td>🎁</td><td>Give</td><td>Gave</td><td>Given</td><td>Dar</td></tr>
-            <tr><td>🚶‍♂️</td><td>Go</td><td>Went</td><td>Gone</td><td>Ir</td></tr>
-            <tr><td>🌱</td><td>Grow</td><td>Grew</td><td>Grown</td><td>Crecer</td></tr>
-            <tr><td>🤲</td><td>Have</td><td>Had</td><td>Had</td><td>Tener / Haber</td></tr>
-            <tr><td>👂</td><td>Hear</td><td>Heard</td><td>Heard</td><td>Oír</td></tr>
-            <tr><td>👊</td><td>Hit</td><td>Hit</td><td>Hit</td><td>Golpear</td></tr>
-            <tr><td>🤕</td><td>Hurt</td><td>Hurt</td><td>Hurt</td><td>Herir</td></tr>
-            <tr><td>🧠</td><td>Know</td><td>Knew</td><td>Known</td><td>Saber / Conocer</td></tr>
-            <tr><td>🏠</td><td>Leave</td><td>Left</td><td>Left</td><td>Salir / Dejar</td></tr>
-            <tr><td>📚</td><td>Learn</td><td>Learnt / Learned</td><td>Learnt / Learned</td><td>Aprender</td></tr>
-            <tr><td>💡</td><td>Let</td><td>Let</td><td>Let</td><td>Permitir</td></tr>
-            <tr><td>🌙</td><td>Lie</td><td>Lay</td><td>Lain</td><td>Echarse / yacer</td></tr>
-            <tr><td>🔥</td><td>Light</td><td>Lit</td><td>Lit</td><td>Encender</td></tr>
-            <tr><td>😢</td><td>Lose</td><td>Lost</td><td>Lost</td><td>Perder</td></tr>
-            <tr><td>🏗️</td><td>Make</td><td>Made</td><td>Made</td><td>Hacer</td></tr>
-            <tr><td>🗣️</td><td>Meet</td><td>Met</td><td>Met</td><td>Conocer / Reunirse</td></tr>
-            <tr><td>💸</td><td>Pay</td><td>Paid</td><td>Paid</td><td>Pagar</td></tr>
-            <tr><td>✍️</td><td>Read</td><td>Read</td><td>Read</td><td>Leer</td></tr>
-            <tr><td>🏃</td><td>Run</td><td>Ran</td><td>Run</td><td>Correr</td></tr>
-            <tr><td>💬</td><td>Say</td><td>Said</td><td>Said</td><td>Decir</td></tr>
-            <tr><td>👀</td><td>See</td><td>Saw</td><td>Seen</td><td>Ver</td></tr>
-            <tr><td>📦</td><td>Send</td><td>Sent</td><td>Sent</td><td>Enviar</td></tr>
-            <tr><td>🧵</td><td>Sew</td><td>Sewed</td><td>Sewn</td><td>Coser</td></tr>
-            <tr><td>🎶</td><td>Sing</td><td>Sang</td><td>Sung</td><td>Cantar</td></tr>
-            <tr><td>🛌</td><td>Sleep</td><td>Slept</td><td>Slept</td><td>Dormir</td></tr>
-            <tr><td>💬</td><td>Speak</td><td>Spoke</td><td>Spoken</td><td>Hablar</td></tr>
-            <tr><td>💰</td><td>Spend</td><td>Spent</td><td>Spent</td><td>Gastar</td></tr>
-            <tr><td>⚡</td><td>Stand</td><td>Stood</td><td>Stood</td><td>Estar de pie</td></tr>
-            <tr><td>🦹</td><td>Steal</td><td>Stole</td><td>Stolen</td><td>Robar</td></tr>
-            <tr><td>🏊</td><td>Swim</td><td>Swam</td><td>Swum</td><td>Nadar</td></tr>
-            <tr><td>✋</td><td>Take</td><td>Took</td><td>Taken</td><td>Tomar / Coger</td></tr>
-            <tr><td>👩‍🏫</td><td>Teach</td><td>Taught</td><td>Taught</td><td>Enseñar</td></tr>
-            <tr><td>🧠</td><td>Think</td><td>Thought</td><td>Thought</td><td>Pensar</td></tr>
-            <tr><td>🗑️</td><td>Throw</td><td>Threw</td><td>Thrown</td><td>Lanzar / Arrojar</td></tr>
-            <tr><td>💡</td><td>Understand</td><td>Understood</td><td>Understood</td><td>Entender</td></tr>
-            <tr><td>🕒</td><td>Wake</td><td>Woke</td><td>Woken</td><td>Despertarse</td></tr>
-            <tr><td>👕</td><td>Wear</td><td>Wore</td><td>Worn</td><td>Llevar puesto</td></tr>
-            <tr><td>🏆</td><td>Win</td><td>Won</td><td>Won</td><td>Ganar</td></tr>
-            <tr><td>✏️</td><td>Write</td><td>Wrote</td><td>Written</td><td>Escribir</td></tr>
-        </tbody>
-        </table>
-        <br>
-        <table>
-            <caption>Regular Verbs-/id/ sound</caption>
-            <thead>
-                <tr><th colspan="5">It is used when the sound of the verb in the infinitive ends in: <span class="highlight">t, d</span></th></tr>
-                <tr><th>Emoji</th><th>Base Form</th><th>Simple Past</th><th>Past Participle</th><th>Spanish</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>🤝</td><td>Accept</td><td>Accepted</td><td>Accepted</td><td>Aceptar</td></tr>
-                <tr><td>🔢</td><td>Count</td><td>Counted</td><td>Counted</td><td>Contar</td></tr>
-                <tr><td>💌</td><td>Date</td><td>Dated</td><td>Dated</td><td>Citar</td></tr>
-                <tr><td>🏁</td><td>End</td><td>Ended</td><td>Ended</td><td>Terminar</td></tr>
-                <tr><td>🤔</td><td>Expect</td><td>Expected</td><td>Expected</td><td>Esperar</td></tr>
-                <tr><td>🎯</td><td>Intend</td><td>Intended</td><td>Intended</td><td>Intentar</td></tr>
-                <tr><td>🙋‍♀️</td><td>Need</td><td>Needed</td><td>Needed</td><td>Necesitar</td></tr>
-                <tr><td>🌱</td><td>Plant</td><td>Planted</td><td>Planted</td><td>Plantar</td></tr>
-                <tr><td>👉</td><td>Point</td><td>Pointed</td><td>Pointed</td><td>Señalar</td></tr>
-                <tr><td>🏠</td><td>Rent</td><td>Rented</td><td>Rented</td><td>Rentar</td></tr>
-                <tr><td>🔁</td><td>Repeat</td><td>Repeated</td><td>Repeated</td><td>Repetir</td></tr>
-                <tr><td>🛡️</td><td>Resist</td><td>Resisted</td><td>Resisted</td><td>Resistir</td></tr>
-                <tr><td>🚀</td><td>Start</td><td>Started</td><td>Started</td><td>Empezar</td></tr>
-                <tr><td>🏙️</td><td>Visit</td><td>Visited</td><td>Visited</td><td>Visitar</td></tr>
-                <tr><td>⏳</td><td>Wait</td><td>Waited</td><td>Waited</td><td>Esperar</td></tr>
-                <tr><td>💖</td><td>Want</td><td>Wanted</td><td>Wanted</td><td>Querer</td></tr>
-            </tbody>
-        </table>
-        <br>
-        <table>
-            <caption>Regular Verbs-/t/ sound</caption>
-            <thead>
-                <tr><th colspan="5">It is used when the sound of the verb in the infinitive ends in: <span class="highlight">p, k, f, s, sh, ch, x, h</span></th></tr>
-                <tr><th>Emoji</th><th>Base Form</th><th>Simple Past</th><th>Past Participle</th><th>Spanish</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>❓</td><td>Ask</td><td>Asked</td><td>Asked</td><td>Preguntar</td></tr>
-                <tr><td>🍳</td><td>Cook</td><td>Cooked</td><td>Cooked</td><td>Cocinar</td></tr>
-                <tr><td>💃</td><td>Dance</td><td>Danced</td><td>Danced</td><td>Bailar</td></tr>
-                <tr><td>👗</td><td>Dress</td><td>Dressed</td><td>Dressed</td><td>Vestir</td></tr>
-                <tr><td>🧹</td><td>Erase</td><td>Erased</td><td>Erased</td><td>Borrar</td></tr>
-                <tr><td>🏁</td><td>Finish</td><td>Finished</td><td>Finished</td><td>Terminar</td></tr>
-                <tr><td>🤝</td><td>Help</td><td>Helped</td><td>Helped</td><td>Ayudar</td></tr>
-                <tr><td>🤾</td><td>Jump</td><td>Jumped</td><td>Jumped</td><td>Brincar / Saltar</td></tr>
-                <tr><td>👍</td><td>Like</td><td>Liked</td><td>Liked</td><td>Gustar</td></tr>
-                <tr><td>👀</td><td>Look</td><td>Looked</td><td>Looked</td><td>Mirar</td></tr>
-                <tr><td>😢</td><td>Miss</td><td>Missed</td><td>Missed</td><td>Extrañar</td></tr>
-                <tr><td>📝</td><td>Practice</td><td>Practiced</td><td>Practiced</td><td>Practicar</td></tr>
-                <tr><td>💪</td><td>Push</td><td>Pushed</td><td>Pushed</td><td>Empujar</td></tr>
-                <tr><td>🛒</td><td>Shop</td><td>Shopped</td><td>Shopped</td><td>Comprar</td></tr>
-                <tr><td>🚬</td><td>Smoke</td><td>Smoked</td><td>Smoked</td><td>Fumar</td></tr>
-                <tr><td>✋</td><td>Stop</td><td>Stopped</td><td>Stopped</td><td>Detener</td></tr>
-                <tr><td>🗣️</td><td>Talk</td><td>Talked</td><td>Talked</td><td>Hablar</td></tr>
-                <tr><td>🖐️</td><td>Use</td><td>Used</td><td>Used</td><td>Usar</td></tr>
-                <tr><td>🚶</td><td>Walk</td><td>Walked</td><td>Walked</td><td>Caminar</td></tr>
-                <tr><td>🧼</td><td>Wash</td><td>Washed</td><td>Washed</td><td>Lavar</td></tr>
-                <tr><td>✨</td><td>Wish</td><td>Wished</td><td>Wished</td><td>Desear</td></tr>
-                <tr><td>💼</td><td>Work</td><td>Worked</td><td>Worked</td><td>Trabajar</td></tr>
-            </tbody>
-        </table>
-        <br>
-        <table>
-            <caption>Regular Verbs-/d/ sound</caption>
-            <thead>
-                <tr><th colspan="5">It is used when the sound of the verb in the infinitive ends in: <span class="highlight">l, n, r, g, v, z, m, b, w, y, vowels</span></th></tr>
-                <tr><th>Emoji</th><th>Base Form</th><th>Simple Past</th><th>Past Participle</th><th>Spanish</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>💬</td><td>Answer</td><td>Answered</td><td>Answered</td><td>Responder</td></tr>
-                <tr><td>🛬</td><td>Arrive</td><td>Arrived</td><td>Arrived</td><td>Llegar / Arribar</td></tr>
-                <tr><td>🏠</td><td>Belong</td><td>Belonged</td><td>Belonged</td><td>Pertenecer</td></tr>
-                <tr><td>🔄</td><td>Change</td><td>Changed</td><td>Changed</td><td>Cambiar</td></tr>
-                <tr><td>🧽</td><td>Clean</td><td>Cleaned</td><td>Cleaned</td><td>Limpiar</td></tr>
-                <tr><td>🧗</td><td>Climb</td><td>Climbed</td><td>Climbed</td><td>Escalar</td></tr>
-                <tr><td>🔒</td><td>Close</td><td>Closed</td><td>Closed</td><td>Cerrar</td></tr>
-                <tr><td>💭</td><td>Consider</td><td>Considered</td><td>Considered</td><td>Considerar</td></tr>
-                <tr><td>🎲</td><td>Dare</td><td>Dared</td><td>Dared</td><td>Retar / Atreverse</td></tr>
-                <tr><td>📦</td><td>Deliver</td><td>Delivered</td><td>Delivered</td><td>Entregar</td></tr>
-                <tr><td>😄</td><td>Enjoy</td><td>Enjoyed</td><td>Enjoyed</td><td>Disfrutar</td></tr>
-                <tr><td>🔋</td><td>Fill</td><td>Filled</td><td>Filled</td><td>Llenar</td></tr>
-                <tr><td>➡️</td><td>Follow</td><td>Followed</td><td>Followed</td><td>Seguir</td></tr>
-                <tr><td>⏱️</td><td>Hurry</td><td>Hurried</td><td>Hurried</td><td>Apurar / Darse prisa</td></tr>
-                <tr><td>📚</td><td>Learn</td><td>Learned</td><td>Learned</td><td>Aprender</td></tr>
-                <tr><td>👂</td><td>Listen</td><td>Listened</td><td>Listened</td><td>Escuchar</td></tr>
-                <tr><td>🏡</td><td>Live</td><td>Lived</td><td>Lived</td><td>Vivir</td></tr>
-                <tr><td>❤️</td><td>Love</td><td>Loved</td><td>Loved</td><td>Amar</td></tr>
-                <tr><td>📝</td><td>Name</td><td>Named</td><td>Named</td><td>Nombrar</td></tr>
-                <tr><td>👐</td><td>Open</td><td>Opened</td><td>Opened</td><td>Abrir</td></tr>
-                <tr><td>📋</td><td>Order</td><td>Ordered</td><td>Ordered</td><td>Ordenar</td></tr>
-                <tr><td>🗓️</td><td>Plan</td><td>Planned</td><td>Planned</td><td>Planear</td></tr>
-                <tr><td>🎮</td><td>Play</td><td>Played</td><td>Played</td><td>Jugar</td></tr>
-                <tr><td>🌧️</td><td>Rain</td><td>Rained</td><td>Rained</td><td>Llover</td></tr>
-                <tr><td>👪</td><td>Raise</td><td>Raised</td><td>Raised</td><td>Criar / Levantar / Aumentar</td></tr>
-                <tr><td>🎬</td><td>Show</td><td>Showed</td><td>Showed</td><td>Mostrar</td></tr>
-                <tr><td>🏡</td><td>Stay</td><td>Stayed</td><td>Stayed</td><td>Permanecer</td></tr>
-                <tr><td>📖</td><td>Study</td><td>Studied</td><td>Studied</td><td>Estudiar</td></tr>
-                <tr><td>✈️</td><td>Travel</td><td>Traveled</td><td>Traveled</td><td>Viajar</td></tr>
-                <tr><td>🤞</td><td>Try</td><td>Tried</td><td>Tried</td><td>Intentar / Tratar</td></tr>
-                <tr><td>🔄</td><td>Turn</td><td>Turned</td><td>Turned</td><td>Voltear / Dar vuelta</td></tr>
-            </tbody>
-        </table>
-        <br>
-    </div>
-
-    <hr>
-    <div class="background unit-header" data-target="unit2">
-        <h1>🏠 The House</h1>
-    </div>
-    <hr>
-    <div id="unit2" class="unit-content">
-        <div class="grid-container">
-
-            <!-- ROOMS -->
-            <div class="card">
-                <img src="" alt="Kitchen" data-search="kitchen" class="card-img">
-                <div class="english">Kitchen</div><div class="spanish">Cocina</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Bedroom" data-search="bedroom" class="card-img">
-                <div class="english">Bedroom</div><div class="spanish">Habitación</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Bathroom" data-search="bathroom" class="card-img">
-                <div class="english">Bathroom</div><div class="spanish">Baño</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Living Room" data-search="living room" class="card-img">
-                <div class="english">Living Room</div><div class="spanish">Sala</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Dining Room" data-search="dining room" class="card-img">
-                <div class="english">Dining Room</div><div class="spanish">Comedor</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Garage" data-search="garage with lambo" class="card-img">
-                <div class="english">Garage</div><div class="spanish">Garaje</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Garden" data-search="garden with grass an flowers" class="card-img">
-                <div class="english">Garden</div><div class="spanish">Jardín</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Balcony" data-search="balcony street" class="card-img">
-                <div class="english">Balcony</div><div class="spanish">Balcón</div>
-            </div>
-
-            <!-- FURNITURE -->
-            <div class="card">
-                <img src="" alt="Sofa" data-search="sofa" class="card-img">
-                <div class="english">Sofa</div><div class="spanish">Sofá</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Table" data-search="table" class="card-img">
-                <div class="english">Table</div><div class="spanish">Mesa</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Chair" data-search="chair of home" class="card-img">
-                <div class="english">Chair</div><div class="spanish">Silla</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Bed" data-search="bed of house" class="card-img">
-                <div class="english">Bed</div><div class="spanish">Cama</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Closet" data-search="closet" class="card-img">
-                <div class="english">Closet</div><div class="spanish">Armario</div>
-            </div>
-
-            <!-- STRUCTURE -->
-            <div class="card">
-                <img src="" alt="Door" data-search="door" class="card-img">
-                <div class="english">Door</div><div class="spanish">Puerta</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Window" data-search="window of home" class="card-img">
-                <div class="english">Window</div><div class="spanish">Ventana</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Stairs" data-search="stairs" class="card-img">
-                <div class="english">Stairs</div><div class="spanish">Escaleras</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Wall" data-search="wall house" class="card-img">
-                <div class="english">Wall</div><div class="spanish">Pared</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Floor" data-search="floor" class="card-img">
-                <div class="english">Floor</div><div class="spanish">Piso / Suelo</div>
-            </div>
-            <br>
+    
+    <!-- OVERLAY DEL MENÚ PRINCIPAL -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    
+    <!-- PANEL DEL MENÚ PRINCIPAL -->
+    <div class="menu-panel" id="menuPanel">
+        <div class="menu-header">
+            <h3>📚 Navigation</h3>
+            <button class="menu-close" onclick="closeMenu()" aria-label="Cerrar menú">✕</button>
+        </div>
+        <div class="menu-links">
+            <a href="index.html" class="menu-link">
+                <span class="menu-link-icon">🏠</span>
+                <span>Home</span>
+            </a>
+            <a href="Grammar.html" class="menu-link">
+                <span class="menu-link-icon">📚</span>
+                <span>Grammar</span>
+            </a>
+            <a href="Vocabulary.html" class="menu-link active">
+                <span class="menu-link-icon">📖</span>
+                <span>Vocabulary</span>
+            </a>
+            <a href="A1.html" class="menu-link">
+                <span class="menu-link-icon">🌱</span>
+                <span>A1 Level</span>
+            </a>
+            <a href="A2.html" class="menu-link">
+                <span class="menu-link-icon">🌿</span>
+                <span>A2 Level</span>
+            </a>
         </div>
     </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit3">
-        <h1>🍽️ Kitchen Utensils</h1>
+    <!-- Botón para abrir el menú de unidades -->
+    <div class="units-floating-btn" onclick="toggleUnitsMenu()">
+        <span class="units-icon">📋</span>
+        <span class="units-text">TOPICS</span>
     </div>
-    <hr>
-    <div id="unit3" class="unit-content">
-        <div class="grid-container">
 
-            <div class="card">
-                <img src="" alt="Spoon" data-search="kitchen spoon" class="card-img">
-                <div class="english">Spoon</div><div class="spanish">Cuchara</div>
-            </div>
+    <!-- Overlay para el menú de unidades -->
+    <div class="units-overlay" id="unitsOverlay" onclick="closeUnitsMenu()"></div>
 
-            <div class="card">
-                <img src="" alt="Fork" data-search="fork" class="card-img">
-                <div class="english">Fork</div><div class="spanish">Tenedor</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Knife" data-search="kitchen knife" class="card-img">
-                <div class="english">Knife</div><div class="spanish">Cuchillo</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Plate" data-search="dinner plate kitchen" class="card-img">
-                <div class="english">Plate</div><div class="spanish">Plato</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Bowl" data-search="kitchen bowl" class="card-img">
-                <div class="english">Bowl</div><div class="spanish">Tazón</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Cup" data-search="kitchen cup" class="card-img">
-                <div class="english">Cup</div><div class="spanish">Taza</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Glass" data-search="drinking glass kitchen" class="card-img">
-                <div class="english">Glass</div><div class="spanish">Vaso</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Pan" data-search="cooking pan kitchen" class="card-img">
-                <div class="english">Pan</div><div class="spanish">Sartén</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Pot" data-search="cooking pot kitchen" class="card-img">
-                <div class="english">Pot</div><div class="spanish">Olla</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Cutting Board" data-search="cutting board kitchen" class="card-img">
-                <div class="english">Cutting Board</div><div class="spanish">Tabla de cortar</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Spatula" data-search="kitchen spatula" class="card-img">
-                <div class="english">Spatula</div><div class="spanish">Espátula</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Whisk" data-search="kitchen whisk" class="card-img">
-                <div class="english">Whisk</div><div class="spanish">Batidor</div>
-            </div>
-            <br>
+    <!-- Panel lateral de unidades -->
+    <div class="units-panel" id="unitsPanel">
+        <div class="units-panel-header">
+            <h3>📚 Vocabulary Topics</h3>
+            <button class="units-close" onclick="closeUnitsMenu()">✕</button>
+        </div>
+        <div class="units-list">
+            <a href="#" class="unit-link active" data-unit="unit1">⚙️ Verbs</a>
+            <a href="#" class="unit-link" data-unit="unit2">🏠 The House</a>
+            <a href="#" class="unit-link" data-unit="unit3">🍽️ Kitchen Utensils</a>
+            <a href="#" class="unit-link" data-unit="unit4">👕 Clothing & Accessories</a>
+            <a href="#" class="unit-link" data-unit="unit5">🍔 Food & Drink</a>
+            <a href="#" class="unit-link" data-unit="unit6">💪 Body Parts</a>
+            <a href="#" class="unit-link" data-unit="unit7">🤒 Health & Illness</a>
+            <a href="#" class="unit-link" data-unit="unit8">👨‍👩‍👧‍👦 Family Members</a>
+            <a href="#" class="unit-link" data-unit="unit9">😊 Feelings & Emotions</a>
+            <a href="#" class="unit-link" data-unit="unit10">👨‍⚕️ Jobs & Occupations</a>
+            <a href="#" class="unit-link" data-unit="unit11">🏙️ Places in the City</a>
+            <a href="#" class="unit-link" data-unit="unit12">🚗 Transport</a>
+            <a href="#" class="unit-link" data-unit="unit13">📚 Education</a>
+            <a href="#" class="unit-link" data-unit="unit14">🦁 Animals</a>
+            <a href="#" class="unit-link" data-unit="unit15">☀️ The Weather</a>
+            <a href="#" class="unit-link" data-unit="unit16">⏰ Time & Seasons</a>
+            <a href="#" class="unit-link" data-unit="unit17">🏔️ Landscape</a>
+            <a href="#" class="unit-link" data-unit="unit18">🎨 Colors</a>
+            <a href="#" class="unit-link" data-unit="unit19">🔢 Numbers</a>
+            <a href="#" class="unit-link" data-unit="unit20">⬆️ Opposite Adjectives</a>
         </div>
     </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit4">
-        <h1>👕 Clothing & Accessories</h1>
-    </div>
-    <hr>
-    <div id="unit4" class="unit-content">
-        <div class="grid-container">
+    <div class="main-container">
 
-            <div class="card">
-                <img src="" alt="T-shirt" data-search="t-shirt isolated clothing" class="card-img">
-                <div class="english">T-shirt</div><div class="spanish">Camiseta</div>
+        <div id="unit1" class="unit-container active">
+            <div class="background">
+                <h1>⚙️ Verbs</h1>
             </div>
-
-            <div class="card">
-                <img src="" alt="Jeans" data-search="blue jeans isolated clothing" class="card-img">
-                <div class="english">Jeans</div><div class="spanish">Jeans</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Hoodie" data-search="hoodie isolated clothing" class="card-img">
-                <div class="english">Hoodie</div><div class="spanish">Sudadera con capucha</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Sweater" data-search="sweater wearing man" class="card-img">
-                <div class="english">Sweater</div><div class="spanish">Suéter</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Jacket" data-search="jacket isolated clothing" class="card-img">
-                <div class="english">Jacket</div><div class="spanish">Chaqueta</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Vest" data-search="vest isolated clothing" class="card-img">
-                <div class="english">Vest</div><div class="spanish">Chaleco</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Pants" data-search="pants isolated clothing" class="card-img">
-                <div class="english">Pants</div><div class="spanish">Pantalones</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Shorts" data-search="shorts clothing" class="card-img">
-                <div class="english">Shorts</div><div class="spanish">Pantaloneta</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Suit" data-search="formal suit isolated clothing" class="card-img">
-                <div class="english">Suit</div><div class="spanish">Traje</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Tie" data-search="neck tie isolated accessory" class="card-img">
-                <div class="english">Tie</div><div class="spanish">Corbata</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Blazer" data-search="blazer formal clothing isolated" class="card-img">
-                <div class="english">Blazer</div><div class="spanish">Blazer</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Evening Gown" data-search="evening gown isolated dress" class="card-img">
-                <div class="english">Evening Gown</div><div class="spanish">Vestido de gala</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="WCoat" data-search="coat isolated clothing" class="card-img">
-                <div class="english"> Coat</div><div class="spanish">Abrigo</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Boots" data-search="boots footwear" class="card-img">
-                <div class="english">Boots</div><div class="spanish">Botas</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Gloves" data-search="winter gloves isolated clothing" class="card-img">
-                <div class="english">Gloves</div><div class="spanish">Guantes</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Scarf" data-search="winter scarf clothing" class="card-img">
-                <div class="english">Scarf</div><div class="spanish">Bufanda</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Beanie" data-search="winter beanie hat" class="card-img">
-                <div class="english">Beanie</div><div class="spanish">Gorro</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Summer Dress" data-search="dress clothing" class="card-img">
-                <div class="english">Dress</div><div class="spanish">Vestido</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Sandals" data-search="sandals isolated footwear" class="card-img">
-                <div class="english">Sandals</div><div class="spanish">Sandalias</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Swimsuit" data-search="swimsuit isolated clothing" class="card-img">
-                <div class="english">Swimsuit</div><div class="spanish">Traje de baño</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Sunglasses" data-search="sunglasses isolated accessory" class="card-img">
-                <div class="english">Sunglasses</div><div class="spanish">Gafas de sol</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Pajamas" data-search="pajamas isolated clothing" class="card-img">
-                <div class="english">Pajamas</div><div class="spanish">Pijama</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Underwear" data-search="underwear product photo isolated" class="card-img">
-                <div class="english">Underwear</div><div class="spanish">Ropa interior</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Socks" data-search="socks isolated clothing" class="card-img">
-                <div class="english">Socks</div><div class="spanish">Medias</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Watch" data-search="wrist watch isolated accessory" class="card-img">
-                <div class="english">Watch</div><div class="spanish">Reloj</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Glasses" data-search="eyeglasses isolated accessory" class="card-img">
-                <div class="english">Glasses</div><div class="spanish">Gafas</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Hat" data-search="hat" class="card-img">
-                <div class="english">Hat</div><div class="spanish">Sombrero</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Tank top" data-search="tank top isolated clothing" class="card-img">
-                <div class="english">Tank top</div><div class="spanish">Camiseta sin mangas</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="necklace" data-search="necklace isolated accessory" class="card-img">
-                <div class="english">Necklace</div><div class="spanish">Collar</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Earrings" data-search="earrings isolated accessory" class="card-img">
-                <div class="english">Earrings</div><div class="spanish">Aretes</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="ring" data-search="ring isolated accessory" class="card-img">
-                <div class="english">Ring</div><div class="spanish">Anillo</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Bracelet" data-search="bracelet isolated accessory" class="card-img">
-                <div class="english">Bracelet</div><div class="spanish">Pulsera</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Belt" data-search="belt isolated accessory" class="card-img">
-                <div class="english">Belt</div><div class="spanish">Cinturón</div>
-            </div>
-
-            <div class="card">
-                <img src="" alt="Wallet" data-search="wallet isolated accessory" class="card-img">
-                <div class="english">Wallet</div><div class="spanish">Cartera</div>
+            
+            <div class="unit-content active">
+                <br>
+                <div class="table-responsive">
+                    <table>
+                        <caption>Irregular Verbs</caption>
+                        <thead>
+                            <tr><th>Emoji</th><th>Base Form</th><th>Past</th><th>Past Participle</th><th>Spanish</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>🌅</td><td>Arise</td><td>Arose</td><td>Arisen</td><td>Surgir, levantarse</td></tr>
+                            <tr><td>⏰</td><td>Awake</td><td>Awoke</td><td>Awoken</td><td>Despertarse</td></tr>
+                            <tr><td>🧍</td><td>Be (am, is, are)</td><td>Was / Were</td><td>Been</td><td>Ser / Estar</td></tr>
+                            <tr><td>👶</td><td>Bear</td><td>Bore</td><td>Born / Borne</td><td>Soportar, dar a luz</td></tr>
+                            <tr><td>🥊</td><td>Beat</td><td>Beat</td><td>Beaten</td><td>Golpear</td></tr>
+                            <tr><td>✨</td><td>Become</td><td>Became</td><td>Become</td><td>Llegar a ser</td></tr>
+                            <tr><td>🚀</td><td>Begin</td><td>Began</td><td>Begun</td><td>Empezar</td></tr>
+                            <tr><td>🔄</td><td>Bend</td><td>Bent</td><td>Bent</td><td>Doblar</td></tr>
+                            <tr><td>🎲</td><td>Bet</td><td>Bet</td><td>Bet</td><td>Apostar</td></tr>
+                            <tr><td>🔗</td><td>Bind</td><td>Bound</td><td>Bound</td><td>Atar, encuadernar</td></tr>
+                            <tr><td>💰</td><td>Bid</td><td>Bid</td><td>Bid</td><td>Pujar</td></tr>
+                            <tr><td>🐍</td><td>Bite</td><td>Bit</td><td>Bitten</td><td>Morder</td></tr>
+                            <tr><td>🩸</td><td>Bleed</td><td>Bled</td><td>Bled</td><td>Sangrar</td></tr>
+                            <tr><td>🌬️</td><td>Blow</td><td>Blew</td><td>Blown</td><td>Soplar</td></tr>
+                            <tr><td>💥</td><td>Break</td><td>Broke</td><td>Broken</td><td>Romper</td></tr>
+                            <tr><td>🐶</td><td>Bring</td><td>Brought</td><td>Brought</td><td>Traer / Llevar</td></tr>
+                            <tr><td>🏗️</td><td>Build</td><td>Built</td><td>Built</td><td>Construir</td></tr>
+                            <tr><td>🛒</td><td>Buy</td><td>Bought</td><td>Bought</td><td>Comprar</td></tr>
+                            <tr><td>🎯</td><td>Catch</td><td>Caught</td><td>Caught</td><td>Atrapar</td></tr>
+                            <tr><td>🚶</td><td>Come</td><td>Came</td><td>Come</td><td>Venir</td></tr>
+                            <tr><td>✂️</td><td>Cut</td><td>Cut</td><td>Cut</td><td>Cortar</td></tr>
+                            <tr><td>🗳️</td><td>Choose</td><td>Chose</td><td>Chosen</td><td>Elegir</td></tr>
+                            <tr><td>💪</td><td>Do</td><td>Did</td><td>Done</td><td>Hacer</td></tr>
+                            <tr><td>🎨</td><td>Draw</td><td>Drew</td><td>Drawn</td><td>Dibujar</td></tr>
+                            <tr><td>🥤</td><td>Drink</td><td>Drank</td><td>Drunk</td><td>Beber</td></tr>
+                            <tr><td>🚗</td><td>Drive</td><td>Drove</td><td>Driven</td><td>Conducir</td></tr>
+                            <tr><td>🍽️</td><td>Eat</td><td>Ate</td><td>Eaten</td><td>Comer</td></tr>
+                            <tr><td>💧</td><td>Fall</td><td>Fell</td><td>Fallen</td><td>Caer</td></tr>
+                            <tr><td>🧠</td><td>Feel</td><td>Felt</td><td>Felt</td><td>Sentir</td></tr>
+                            <tr><td>🔍</td><td>Find</td><td>Found</td><td>Found</td><td>Encontrar</td></tr>
+                            <tr><td>✈️</td><td>Fly</td><td>Flew</td><td>Flown</td><td>Volar</td></tr>
+                            <tr><td>🧊</td><td>Freeze</td><td>Froze</td><td>Frozen</td><td>Congelar</td></tr>
+                            <tr><td>🎁</td><td>Give</td><td>Gave</td><td>Given</td><td>Dar</td></tr>
+                            <tr><td>🚶‍♂️</td><td>Go</td><td>Went</td><td>Gone</td><td>Ir</td></tr>
+                            <tr><td>🌱</td><td>Grow</td><td>Grew</td><td>Grown</td><td>Crecer</td></tr>
+                            <tr><td>🤲</td><td>Have</td><td>Had</td><td>Had</td><td>Tener / Haber</td></tr>
+                            <tr><td>👂</td><td>Hear</td><td>Heard</td><td>Heard</td><td>Oír</td></tr>
+                            <tr><td>👊</td><td>Hit</td><td>Hit</td><td>Hit</td><td>Golpear</td></tr>
+                            <tr><td>🤕</td><td>Hurt</td><td>Hurt</td><td>Hurt</td><td>Herir</td></tr>
+                            <tr><td>🧠</td><td>Know</td><td>Knew</td><td>Known</td><td>Saber / Conocer</td></tr>
+                            <tr><td>🏠</td><td>Leave</td><td>Left</td><td>Left</td><td>Salir / Dejar</td></tr>
+                            <tr><td>📚</td><td>Learn</td><td>Learnt / Learned</td><td>Learnt / Learned</td><td>Aprender</td></tr>
+                            <tr><td>💡</td><td>Let</td><td>Let</td><td>Let</td><td>Permitir</td></tr>
+                            <tr><td>🌙</td><td>Lie</td><td>Lay</td><td>Lain</td><td>Echarse / yacer</td></tr>
+                            <tr><td>🔥</td><td>Light</td><td>Lit</td><td>Lit</td><td>Encender</td></tr>
+                            <tr><td>😢</td><td>Lose</td><td>Lost</td><td>Lost</td><td>Perder</td></tr>
+                            <tr><td>🏗️</td><td>Make</td><td>Made</td><td>Made</td><td>Hacer</td></tr>
+                            <tr><td>🗣️</td><td>Meet</td><td>Met</td><td>Met</td><td>Conocer / Reunirse</td></tr>
+                            <tr><td>💸</td><td>Pay</td><td>Paid</td><td>Paid</td><td>Pagar</td></tr>
+                            <tr><td>✍️</td><td>Read</td><td>Read</td><td>Read</td><td>Leer</td></tr>
+                            <tr><td>🏃</td><td>Run</td><td>Ran</td><td>Run</td><td>Correr</td></tr>
+                            <tr><td>💬</td><td>Say</td><td>Said</td><td>Said</td><td>Decir</td></tr>
+                            <tr><td>👀</td><td>See</td><td>Saw</td><td>Seen</td><td>Ver</td></tr>
+                            <tr><td>📦</td><td>Send</td><td>Sent</td><td>Sent</td><td>Enviar</td></tr>
+                            <tr><td>🧵</td><td>Sew</td><td>Sewed</td><td>Sewn</td><td>Coser</td></tr>
+                            <tr><td>🎶</td><td>Sing</td><td>Sang</td><td>Sung</td><td>Cantar</td></tr>
+                            <tr><td>🛌</td><td>Sleep</td><td>Slept</td><td>Slept</td><td>Dormir</td></tr>
+                            <tr><td>💬</td><td>Speak</td><td>Spoke</td><td>Spoken</td><td>Hablar</td></tr>
+                            <tr><td>💰</td><td>Spend</td><td>Spent</td><td>Spent</td><td>Gastar</td></tr>
+                            <tr><td>⚡</td><td>Stand</td><td>Stood</td><td>Stood</td><td>Estar de pie</td></tr>
+                            <tr><td>🦹</td><td>Steal</td><td>Stole</td><td>Stolen</td><td>Robar</td></tr>
+                            <tr><td>🏊</td><td>Swim</td><td>Swam</td><td>Swum</td><td>Nadar</td></tr>
+                            <tr><td>✋</td><td>Take</td><td>Took</td><td>Taken</td><td>Tomar / Coger</td></tr>
+                            <tr><td>👩‍🏫</td><td>Teach</td><td>Taught</td><td>Taught</td><td>Enseñar</td></tr>
+                            <tr><td>🧠</td><td>Think</td><td>Thought</td><td>Thought</td><td>Pensar</td></tr>
+                            <tr><td>🗑️</td><td>Throw</td><td>Threw</td><td>Thrown</td><td>Lanzar / Arrojar</td></tr>
+                            <tr><td>💡</td><td>Understand</td><td>Understood</td><td>Understood</td><td>Entender</td></tr>
+                            <tr><td>🕒</td><td>Wake</td><td>Woke</td><td>Woken</td><td>Despertarse</td></tr>
+                            <tr><td>👕</td><td>Wear</td><td>Wore</td><td>Worn</td><td>Llevar puesto</td></tr>
+                            <tr><td>🏆</td><td>Win</td><td>Won</td><td>Won</td><td>Ganar</td></tr>
+                            <tr><td>✏️</td><td>Write</td><td>Wrote</td><td>Written</td><td>Escribir</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <br>
+                <div class="table-responsive">
+                    <table>
+                        <caption>Regular Verbs - /id/ sound</caption>
+                        <thead>
+                            <tr><th colspan="5">It is used when the sound of the verb in the infinitive ends in: <span class="highlight">t, d</span></th></tr>
+                            <tr><th>Emoji</th><th>Base Form</th><th>Simple Past</th><th>Past Participle</th><th>Spanish</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>🤝</td><td>Accept</td><td>Accepted</td><td>Accepted</td><td>Aceptar</td></tr>
+                            <tr><td>🔢</td><td>Count</td><td>Counted</td><td>Counted</td><td>Contar</td></tr>
+                            <tr><td>💌</td><td>Date</td><td>Dated</td><td>Dated</td><td>Citar</td></tr>
+                            <tr><td>🏁</td><td>End</td><td>Ended</td><td>Ended</td><td>Terminar</td></tr>
+                            <tr><td>🤔</td><td>Expect</td><td>Expected</td><td>Expected</td><td>Esperar</td></tr>
+                            <tr><td>🎯</td><td>Intend</td><td>Intended</td><td>Intended</td><td>Intentar</td></tr>
+                            <tr><td>🙋‍♀️</td><td>Need</td><td>Needed</td><td>Needed</td><td>Necesitar</td></tr>
+                            <tr><td>🌱</td><td>Plant</td><td>Planted</td><td>Planted</td><td>Plantar</td></tr>
+                            <tr><td>👉</td><td>Point</td><td>Pointed</td><td>Pointed</td><td>Señalar</td></tr>
+                            <tr><td>🏠</td><td>Rent</td><td>Rented</td><td>Rented</td><td>Rentar</td></tr>
+                            <tr><td>🔁</td><td>Repeat</td><td>Repeated</td><td>Repeated</td><td>Repetir</td></tr>
+                            <tr><td>🛡️</td><td>Resist</td><td>Resisted</td><td>Resisted</td><td>Resistir</td></tr>
+                            <tr><td>🚀</td><td>Start</td><td>Started</td><td>Started</td><td>Empezar</td></tr>
+                            <tr><td>🏙️</td><td>Visit</td><td>Visited</td><td>Visited</td><td>Visitar</td></tr>
+                            <tr><td>⏳</td><td>Wait</td><td>Waited</td><td>Waited</td><td>Esperar</td></tr>
+                            <tr><td>💖</td><td>Want</td><td>Wanted</td><td>Wanted</td><td>Querer</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="table-responsive">
+                    <table>
+                        <caption>Regular Verbs - /t/ sound</caption>
+                        <thead>
+                            <tr><th colspan="5">It is used when the sound of the verb in the infinitive ends in: <span class="highlight">p, k, f, s, sh, ch, x, h</span></th></tr>
+                            <tr><th>Emoji</th><th>Base Form</th><th>Simple Past</th><th>Past Participle</th><th>Spanish</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>❓</td><td>Ask</td><td>Asked</td><td>Asked</td><td>Preguntar</td></tr>
+                            <tr><td>🍳</td><td>Cook</td><td>Cooked</td><td>Cooked</td><td>Cocinar</td></tr>
+                            <tr><td>💃</td><td>Dance</td><td>Danced</td><td>Danced</td><td>Bailar</td></tr>
+                            <tr><td>👗</td><td>Dress</td><td>Dressed</td><td>Dressed</td><td>Vestir</td></tr>
+                            <tr><td>🧹</td><td>Erase</td><td>Erased</td><td>Erased</td><td>Borrar</td></tr>
+                            <tr><td>🏁</td><td>Finish</td><td>Finished</td><td>Finished</td><td>Terminar</td></tr>
+                            <tr><td>🤝</td><td>Help</td><td>Helped</td><td>Helped</td><td>Ayudar</td></tr>
+                            <tr><td>🤾</td><td>Jump</td><td>Jumped</td><td>Jumped</td><td>Brincar / Saltar</td></tr>
+                            <tr><td>👍</td><td>Like</td><td>Liked</td><td>Liked</td><td>Gustar</td></tr>
+                            <tr><td>👀</td><td>Look</td><td>Looked</td><td>Looked</td><td>Mirar</td></tr>
+                            <tr><td>😢</td><td>Miss</td><td>Missed</td><td>Missed</td><td>Extrañar</td></tr>
+                            <tr><td>📝</td><td>Practice</td><td>Practiced</td><td>Practiced</td><td>Practicar</td></tr>
+                            <tr><td>💪</td><td>Push</td><td>Pushed</td><td>Pushed</td><td>Empujar</td></tr>
+                            <tr><td>🛒</td><td>Shop</td><td>Shopped</td><td>Shopped</td><td>Comprar</td></tr>
+                            <tr><td>🚬</td><td>Smoke</td><td>Smoked</td><td>Smoked</td><td>Fumar</td></tr>
+                            <tr><td>✋</td><td>Stop</td><td>Stopped</td><td>Stopped</td><td>Detener</td></tr>
+                            <tr><td>🗣️</td><td>Talk</td><td>Talked</td><td>Talked</td><td>Hablar</td></tr>
+                            <tr><td>🖐️</td><td>Use</td><td>Used</td><td>Used</td><td>Usar</td></tr>
+                            <tr><td>🚶</td><td>Walk</td><td>Walked</td><td>Walked</td><td>Caminar</td></tr>
+                            <tr><td>🧼</td><td>Wash</td><td>Washed</td><td>Washed</td><td>Lavar</td></tr>
+                            <tr><td>✨</td><td>Wish</td><td>Wished</td><td>Wished</td><td>Desear</td></tr>
+                            <tr><td>💼</td><td>Work</td><td>Worked</td><td>Worked</td><td>Trabajar</td></tr>
+                        </tbody>
+                    </table> 
+                </div>
+                <br>
+                <div class="table-responsive">
+                    <table>
+                        <caption>Regular Verbs - /d/ sound</caption>
+                        <thead>
+                            <tr><th colspan="5">It is used when the sound of the verb in the infinitive ends in: <span class="highlight">l, n, r, g, v, z, m, b, w, y, vowels</span></th></tr>
+                            <tr><th>Emoji</th><th>Base Form</th><th>Simple Past</th><th>Past Participle</th><th>Spanish</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>💬</td><td>Answer</td><td>Answered</td><td>Answered</td><td>Responder</td></tr>
+                            <tr><td>🛬</td><td>Arrive</td><td>Arrived</td><td>Arrived</td><td>Llegar / Arribar</td></tr>
+                            <tr><td>🏠</td><td>Belong</td><td>Belonged</td><td>Belonged</td><td>Pertenecer</td></tr>
+                            <tr><td>🔄</td><td>Change</td><td>Changed</td><td>Changed</td><td>Cambiar</td></tr>
+                            <tr><td>🧽</td><td>Clean</td><td>Cleaned</td><td>Cleaned</td><td>Limpiar</td></tr>
+                            <tr><td>🧗</td><td>Climb</td><td>Climbed</td><td>Climbed</td><td>Escalar</td></tr>
+                            <tr><td>🔒</td><td>Close</td><td>Closed</td><td>Closed</td><td>Cerrar</td></tr>
+                            <tr><td>💭</td><td>Consider</td><td>Considered</td><td>Considered</td><td>Considerar</td></tr>
+                            <tr><td>🎲</td><td>Dare</td><td>Dared</td><td>Dared</td><td>Retar / Atreverse</td></tr>
+                            <tr><td>📦</td><td>Deliver</td><td>Delivered</td><td>Delivered</td><td>Entregar</td></tr>
+                            <tr><td>😄</td><td>Enjoy</td><td>Enjoyed</td><td>Enjoyed</td><td>Disfrutar</td></tr>
+                            <tr><td>🔋</td><td>Fill</td><td>Filled</td><td>Filled</td><td>Llenar</td></tr>
+                            <tr><td>➡️</td><td>Follow</td><td>Followed</td><td>Followed</td><td>Seguir</td></tr>
+                            <tr><td>⏱️</td><td>Hurry</td><td>Hurried</td><td>Hurried</td><td>Apurar / Darse prisa</td></tr>
+                            <tr><td>📚</td><td>Learn</td><td>Learned</td><td>Learned</td><td>Aprender</td></tr>
+                            <tr><td>👂</td><td>Listen</td><td>Listened</td><td>Listened</td><td>Escuchar</td></tr>
+                            <tr><td>🏡</td><td>Live</td><td>Lived</td><td>Lived</td><td>Vivir</td></tr>
+                            <tr><td>❤️</td><td>Love</td><td>Loved</td><td>Loved</td><td>Amar</td></tr>
+                            <tr><td>📝</td><td>Name</td><td>Named</td><td>Named</td><td>Nombrar</td></tr>
+                            <tr><td>👐</td><td>Open</td><td>Opened</td><td>Opened</td><td>Abrir</td></tr>
+                            <tr><td>📋</td><td>Order</td><td>Ordered</td><td>Ordered</td><td>Ordenar</td></tr>
+                            <tr><td>🗓️</td><td>Plan</td><td>Planned</td><td>Planned</td><td>Planear</td></tr>
+                            <tr><td>🎮</td><td>Play</td><td>Played</td><td>Played</td><td>Jugar</td></tr>
+                            <tr><td>🌧️</td><td>Rain</td><td>Rained</td><td>Rained</td><td>Llover</td></tr>
+                            <tr><td>👪</td><td>Raise</td><td>Raised</td><td>Raised</td><td>Criar / Levantar / Aumentar</td></tr>
+                            <tr><td>🎬</td><td>Show</td><td>Showed</td><td>Showed</td><td>Mostrar</td></tr>
+                            <tr><td>🏡</td><td>Stay</td><td>Stayed</td><td>Stayed</td><td>Permanecer</td></tr>
+                            <tr><td>📖</td><td>Study</td><td>Studied</td><td>Studied</td><td>Estudiar</td></tr>
+                            <tr><td>✈️</td><td>Travel</td><td>Traveled</td><td>Traveled</td><td>Viajar</td></tr>
+                            <tr><td>🤞</td><td>Try</td><td>Tried</td><td>Tried</td><td>Intentar / Tratar</td></tr>
+                            <tr><td>🔄</td><td>Turn</td><td>Turned</td><td>Turned</td><td>Voltear / Dar vuelta</td></tr>
+                        </tbody>
+                    </table>    
+                </div>
+                <br>
             </div>
         </div>
-        <br>
-    </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit5">
-        <h1>🍔 Food & Drink</h1>
-    </div>
-    <hr>
-    <div id="unit5" class="unit-content">
+        <div id="unit2" class="unit-container">
+            <div class="background">
+                <h1>🏠 The House</h1>
+            </div>
+            
+            <div class="unit-content">
+                <div class="grid-container">
+                    <!-- ROOMS -->
+                    <div class="card">
+                        <img src="" alt="Kitchen" data-search="kitchen" class="card-img">
+                        <div class="english">Kitchen</div><div class="spanish">Cocina</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Bedroom" data-search="bedroom" class="card-img">
+                        <div class="english">Bedroom</div><div class="spanish">Habitación</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Bathroom" data-search="bathroom" class="card-img">
+                        <div class="english">Bathroom</div><div class="spanish">Baño</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Living Room" data-search="living room" class="card-img">
+                        <div class="english">Living Room</div><div class="spanish">Sala</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Dining Room" data-search="dining room" class="card-img">
+                        <div class="english">Dining Room</div><div class="spanish">Comedor</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Garage" data-search="garage with lambo" class="card-img">
+                        <div class="english">Garage</div><div class="spanish">Garaje</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Garden" data-search="garden with grass an flowers" class="card-img">
+                        <div class="english">Garden</div><div class="spanish">Jardín</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Balcony" data-search="balcony street" class="card-img">
+                        <div class="english">Balcony</div><div class="spanish">Balcón</div>
+                    </div>
 
-    </div>
+                    <!-- FURNITURE -->
+                    <div class="card">
+                        <img src="" alt="Sofa" data-search="sofa" class="card-img">
+                        <div class="english">Sofa</div><div class="spanish">Sofá</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Table" data-search="table" class="card-img">
+                        <div class="english">Table</div><div class="spanish">Mesa</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Chair" data-search="chair of home" class="card-img">
+                        <div class="english">Chair</div><div class="spanish">Silla</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Bed" data-search="bed of house" class="card-img">
+                        <div class="english">Bed</div><div class="spanish">Cama</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Closet" data-search="closet" class="card-img">
+                        <div class="english">Closet</div><div class="spanish">Armario</div>
+                    </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit6">
-        <h1>💪 Body Parts</h1>
-    </div>
-    <hr>
-    <div id="unit6" class="unit-content">
+                    <!-- STRUCTURE -->
+                    <div class="card">
+                        <img src="" alt="Door" data-search="door" class="card-img">
+                        <div class="english">Door</div><div class="spanish">Puerta</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Window" data-search="window of home" class="card-img">
+                        <div class="english">Window</div><div class="spanish">Ventana</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Stairs" data-search="stairs" class="card-img">
+                        <div class="english">Stairs</div><div class="spanish">Escaleras</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Wall" data-search="wall house" class="card-img">
+                        <div class="english">Wall</div><div class="spanish">Pared</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Floor" data-search="floor" class="card-img">
+                        <div class="english">Floor</div><div class="spanish">Piso / Suelo</div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
 
-    </div>
-    <hr>
-    <div class="background unit-header" data-target="unit7">
-        <h1>🤒 Health & Illness</h1>
-    </div>
-    <hr>
-    <div id="unit7" class="unit-content">
+        <div id="unit3" class="unit-container">
+            <div class="background">
+                <h1>🍽️ Kitchen Utensils</h1>
+            </div>
+            
+            <div class="unit-content">
+                <div class="grid-container">
+                    <div class="card">
+                        <img src="" alt="Spoon" data-search="kitchen spoon" class="card-img">
+                        <div class="english">Spoon</div><div class="spanish">Cuchara</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Fork" data-search="fork" class="card-img">
+                        <div class="english">Fork</div><div class="spanish">Tenedor</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Knife" data-search="kitchen knife" class="card-img">
+                        <div class="english">Knife</div><div class="spanish">Cuchillo</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Plate" data-search="dinner plate kitchen" class="card-img">
+                        <div class="english">Plate</div><div class="spanish">Plato</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Bowl" data-search="kitchen bowl" class="card-img">
+                        <div class="english">Bowl</div><div class="spanish">Tazón</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Cup" data-search="kitchen cup" class="card-img">
+                        <div class="english">Cup</div><div class="spanish">Taza</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Glass" data-search="drinking glass kitchen" class="card-img">
+                        <div class="english">Glass</div><div class="spanish">Vaso</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Pan" data-search="cooking pan kitchen" class="card-img">
+                        <div class="english">Pan</div><div class="spanish">Sartén</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Pot" data-search="cooking pot kitchen" class="card-img">
+                        <div class="english">Pot</div><div class="spanish">Olla</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Cutting Board" data-search="cutting board kitchen" class="card-img">
+                        <div class="english">Cutting Board</div><div class="spanish">Tabla de cortar</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Spatula" data-search="kitchen spatula" class="card-img">
+                        <div class="english">Spatula</div><div class="spanish">Espátula</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Whisk" data-search="kitchen whisk" class="card-img">
+                        <div class="english">Whisk</div><div class="spanish">Batidor</div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
 
-    </div>
+        <div id="unit4" class="unit-container">
+            <div class="background">
+                <h1>👕 Clothing & Accessories</h1>
+            </div>
+            
+            <div class="unit-content">
+                <div class="grid-container">
+                    <div class="card">
+                        <img src="" alt="T-shirt" data-search="t-shirt isolated clothing" class="card-img">
+                        <div class="english">T-shirt</div><div class="spanish">Camiseta</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Jeans" data-search="blue jeans isolated clothing" class="card-img">
+                        <div class="english">Jeans</div><div class="spanish">Jeans</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Hoodie" data-search="hoodie isolated clothing" class="card-img">
+                        <div class="english">Hoodie</div><div class="spanish">Sudadera con capucha</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Sweater" data-search="sweater wearing man" class="card-img">
+                        <div class="english">Sweater</div><div class="spanish">Suéter</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Jacket" data-search="jacket isolated clothing" class="card-img">
+                        <div class="english">Jacket</div><div class="spanish">Chaqueta</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Vest" data-search="vest isolated clothing" class="card-img">
+                        <div class="english">Vest</div><div class="spanish">Chaleco</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Pants" data-search="pants isolated clothing" class="card-img">
+                        <div class="english">Pants</div><div class="spanish">Pantalones</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Shorts" data-search="shorts clothing" class="card-img">
+                        <div class="english">Shorts</div><div class="spanish">Pantaloneta</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Suit" data-search="formal suit isolated clothing" class="card-img">
+                        <div class="english">Suit</div><div class="spanish">Traje</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Tie" data-search="neck tie isolated accessory" class="card-img">
+                        <div class="english">Tie</div><div class="spanish">Corbata</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Blazer" data-search="blazer formal clothing isolated" class="card-img">
+                        <div class="english">Blazer</div><div class="spanish">Blazer</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Evening Gown" data-search="evening gown isolated dress" class="card-img">
+                        <div class="english">Evening Gown</div><div class="spanish">Vestido de gala</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Coat" data-search="coat isolated clothing" class="card-img">
+                        <div class="english">Coat</div><div class="spanish">Abrigo</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Boots" data-search="boots footwear" class="card-img">
+                        <div class="english">Boots</div><div class="spanish">Botas</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Gloves" data-search="winter gloves isolated clothing" class="card-img">
+                        <div class="english">Gloves</div><div class="spanish">Guantes</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Scarf" data-search="winter scarf clothing" class="card-img">
+                        <div class="english">Scarf</div><div class="spanish">Bufanda</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Beanie" data-search="winter beanie hat" class="card-img">
+                        <div class="english">Beanie</div><div class="spanish">Gorro</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Summer Dress" data-search="dress clothing" class="card-img">
+                        <div class="english">Dress</div><div class="spanish">Vestido</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Sandals" data-search="sandals isolated footwear" class="card-img">
+                        <div class="english">Sandals</div><div class="spanish">Sandalias</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Swimsuit" data-search="swimsuit isolated clothing" class="card-img">
+                        <div class="english">Swimsuit</div><div class="spanish">Traje de baño</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Sunglasses" data-search="sunglasses isolated accessory" class="card-img">
+                        <div class="english">Sunglasses</div><div class="spanish">Gafas de sol</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Pajamas" data-search="pajamas isolated clothing" class="card-img">
+                        <div class="english">Pajamas</div><div class="spanish">Pijama</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Underwear" data-search="underwear product photo isolated" class="card-img">
+                        <div class="english">Underwear</div><div class="spanish">Ropa interior</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Socks" data-search="socks isolated clothing" class="card-img">
+                        <div class="english">Socks</div><div class="spanish">Medias</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Watch" data-search="wrist watch isolated accessory" class="card-img">
+                        <div class="english">Watch</div><div class="spanish">Reloj</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Glasses" data-search="eyeglasses isolated accessory" class="card-img">
+                        <div class="english">Glasses</div><div class="spanish">Gafas</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Hat" data-search="hat" class="card-img">
+                        <div class="english">Hat</div><div class="spanish">Sombrero</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Tank top" data-search="tank top isolated clothing" class="card-img">
+                        <div class="english">Tank top</div><div class="spanish">Camiseta sin mangas</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="necklace" data-search="necklace isolated accessory" class="card-img">
+                        <div class="english">Necklace</div><div class="spanish">Collar</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Earrings" data-search="earrings isolated accessory" class="card-img">
+                        <div class="english">Earrings</div><div class="spanish">Aretes</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="ring" data-search="ring isolated accessory" class="card-img">
+                        <div class="english">Ring</div><div class="spanish">Anillo</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Bracelet" data-search="bracelet isolated accessory" class="card-img">
+                        <div class="english">Bracelet</div><div class="spanish">Pulsera</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Belt" data-search="belt isolated accessory" class="card-img">
+                        <div class="english">Belt</div><div class="spanish">Cinturón</div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="Wallet" data-search="wallet isolated accessory" class="card-img">
+                        <div class="english">Wallet</div><div class="spanish">Cartera</div>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit8">
-        <h1>👨‍👩‍👧‍👦 Family Members</h1>
-    </div>
-    <hr>
-    <div id="unit8" class="unit-content">
+        <div id="unit5" class="unit-container">
+            <div class="background">
+                <h1>🍔 Food & Drink</h1>
+            </div>
+            <div class="unit-content">
+                <!-- Contenido pendiente -->
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    </div>
+        <div id="unit6" class="unit-container">
+            <div class="background">
+                <h1>💪 Body Parts</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit9">
-        <h1>😊 Feelings & Emotions</h1>
-    </div>
-    <hr>
-    <div id="unit9" class="unit-content">
+        <div id="unit7" class="unit-container">
+            <div class="background">
+                <h1>🤒 Health & Illness</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    </div>
+        <div id="unit8" class="unit-container">
+            <div class="background">
+                <h1>👨‍👩‍👧‍👦 Family Members</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit10">
-        <h1>👨‍⚕️ Jobs & Occupations</h1>
-    </div>
-    <hr>
-    <div id="unit10" class="unit-content">
+        <div id="unit9" class="unit-container">
+            <div class="background">
+                <h1>😊 Feelings & Emotions</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    </div>
+        <div id="unit10" class="unit-container">
+            <div class="background">
+                <h1>👨‍⚕️ Jobs & Occupations</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit11">
-        <h1>🏙️ Places in the City</h1>
-    </div>
-    <hr>
-    <div id="unit11" class="unit-content">
+        <div id="unit11" class="unit-container">
+            <div class="background">
+                <h1>🏙️ Places in the City</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    </div>
+        <div id="unit12" class="unit-container">
+            <div class="background">
+                <h1>🚗 Transport</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit12">
-        <h1>🚗 Transport</h1>
-    </div>
-    <hr>
-    <div id="unit12" class="unit-content">
+        <div id="unit13" class="unit-container">
+            <div class="background">
+                <h1>📚 Education</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    </div>
+        <div id="unit14" class="unit-container">
+            <div class="background">
+                <h1>🦁 Animals</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit13">
-        <h1>📚 Education</h1>
-    </div>
-    <hr>
-    <div id="unit13" class="unit-content">
+        <div id="unit15" class="unit-container">
+            <div class="background">
+                <h1>☀️ The Weather</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    </div>
+        <div id="unit16" class="unit-container">
+            <div class="background">
+                <h1>⏰ Time & Seasons</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit14">
-        <h1>🦁 Animals</h1>
-    </div>
-    <hr>
-    <div id="unit14" class="unit-content">
+        <div id="unit17" class="unit-container">
+            <div class="background">
+                <h1>🏔️ Landscape</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    </div>
+        <div id="unit18" class="unit-container">
+            <div class="background">
+                <h1>🎨 Colors</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit15">
-        <h1>☀️ The Weather</h1>
-    </div>
-    <hr>
-    <div id="unit15" class="unit-content">
+        <div id="unit19" class="unit-container">
+            <div class="background">
+                <h1>🔢 Numbers</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    </div>
+        <div id="unit20" class="unit-container">
+            <div class="background">
+                <h1>⬆️ Opposite Adjectives</h1>
+            </div>
+            <div class="unit-content">
+                <p style="text-align: center; padding: 50px;">Contenido en desarrollo... 🚧</p>
+            </div>
+        </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit16">
-        <h1>⏰ Time & Seasons</h1>
-    </div>
-    <hr>
-    <div id="unit16" class="unit-content">
-
-    </div>
-
-    <hr>
-    <div class="background unit-header" data-target="unit17">
-        <h1>🏔️ Landscape</h1>
-    </div>
-    <hr>
-    <div id="unit17" class="unit-content">
-
-    </div>
-
-    <hr>
-    <div class="background unit-header" data-target="unit18">
-        <h1>🎨 Colors</h1>
-    </div>
-    <hr>
-    <div id="unit18" class="unit-content">
-
-    </div>
-
-    <hr>
-    <div class="background unit-header" data-target="unit19">
-        <h1>🔢 Numbers</h1>
-    </div>
-    <hr>
-    <div id="unit19" class="unit-content">
-
-    </div>
-
-    <hr>
-    <div class="background unit-header" data-target="unit20">
-        <h1>⬆️ Opposite Adjectives</h1>
-    </div>
-    <hr>
-    <div id="unit20" class="unit-content">
-        
     </div>
 </body>
 </html>

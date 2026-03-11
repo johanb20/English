@@ -5,126 +5,2278 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <script src="images-api.js"></script>
     <title>Grammar</title>
 </head>
-<body>
-    <hr>
-    <div class="background unit-header" data-target="unit1">
-        <h1>🔀 Conditionals</h1>
-    </div>
-    <hr>
-    <div id="unit1" class="unit-content">
+<body class="theme-grammar">
 
+    <!-- BOTÓN FLOTANTE DEL MENÚ PRINCIPAL -->
+    <div class="menu-floating-btn" onclick="toggleMenu()">
+        <span class="menu-icon">☰</span>
+        <span class="menu-text">MENU</span>
     </div>
-
-    <hr>
-    <div class="background unit-header" data-target="unit2">
-        <h1>📐 Articles</h1>
-    </div>
-    <hr>
-    <div id="unit2" class="unit-content">
-
-    </div>
-
-    <hr>
-    <div class="background unit-header" data-target="unit3">
-        <h1>📍 Prepositions</h1>
-    </div>
-    <hr>
-    <div id="unit3" class="unit-content">
-
-    </div>
-
-    <hr>
-    <div class="background unit-header" data-target="unit4">
-        <h1>🔋 Modal verbs</h1>
-    </div>
-    <hr>
-    <div id="unit4" class="unit-content">
-
-    </div>
-
-    <hr>
-    <div class="background unit-header" data-target="unit5">
-        <h1>🔌 Phrasal verbs</h1>
-    </div>
-    <hr>
-    <div id="unit5" class="unit-content">
-
+    
+    <!-- OVERLAY DEL MENÚ PRINCIPAL -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    
+    <!-- PANEL DEL MENÚ PRINCIPAL -->
+    <div class="menu-panel" id="menuPanel">
+        <div class="menu-header">
+            <h3>📚 Navigation</h3>
+            <button class="menu-close" onclick="closeMenu()" aria-label="Cerrar menú">✕</button>
+        </div>
+        <div class="menu-links">
+            <a href="index.html" class="menu-link">
+                <span class="menu-link-icon">🏠</span>
+                <span>Home</span>
+            </a>
+            <a href="Grammar.html" class="menu-link active">
+                <span class="menu-link-icon">📚</span>
+                <span>Grammar</span>
+            </a>
+            <a href="Vocabulary.html" class="menu-link">
+                <span class="menu-link-icon">📖</span>
+                <span>Vocabulary</span>
+            </a>
+            <a href="A1.html" class="menu-link">
+                <span class="menu-link-icon">🌱</span>
+                <span>A1 Level</span>
+            </a>
+            <a href="A2.html" class="menu-link">
+                <span class="menu-link-icon">🌿</span>
+                <span>A2 Level</span>
+            </a>
+        </div>
     </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit6">
-        <h1>⏳ Verb tenses</h1>
-    </div>
-    <hr>
-    <div id="unit6" class="unit-content">
-
+    <!-- Botón para abrir el menú de unidades -->
+    <div class="units-floating-btn" onclick="toggleUnitsMenu()">
+        <span class="units-icon">📋</span>
+        <span class="units-text">TOPICS</span>
     </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit7">
-        <h1>👤 Pronouns</h1>
-    </div>
-    <hr>
-    <div id="unit7" class="unit-content">
+    <!-- Overlay para el menú de unidades -->
+    <div class="units-overlay" id="unitsOverlay" onclick="closeUnitsMenu()"></div>
 
-    </div>
-
-    <hr>
-    <div class="background unit-header" data-target="unit8">
-        <h1>⚖️ Quantifiers</h1>
-    </div>
-    <hr>
-    <div id="unit8" class="unit-content">
-
-    </div>
-
-    <hr>
-    <div class="background unit-header" data-target="unit9">
-        <h1>🔗 Connectors</h1>
-    </div>
-    <hr>
-    <div id="unit9" class="unit-content">
-
-    </div>
-
-    <hr>
-    <div class="background unit-header" data-target="unit10">
-        <h1>👥 Relative pronouns</h1>
-    </div>
-    <hr>
-    <div id="unit10" class="unit-content">
-
+    <!-- Panel lateral de unidades -->
+    <div class="units-panel" id="unitsPanel">
+        <div class="units-panel-header">
+            <h3>📚 Grammar Topics</h3>
+            <button class="units-close" onclick="closeUnitsMenu()">✕</button>
+        </div>
+        <div class="units-list">
+            <a href="#" class="unit-link active" data-unit="unit1">👤 Unit 1: Pronouns</a>
+            <a href="#" class="unit-link" data-unit="unit2">📍 Unit 2: Prepositions</a>
+            <a href="#" class="unit-link" data-unit="unit3">⏳ Unit 3: Verb tenses</a>
+            <a href="#" class="unit-link" data-unit="unit4">📐 Unit 4: Articles</a>
+            <a href="#" class="unit-link" data-unit="unit5">⚖️ Unit 5: Quantifiers</a>
+            <a href="#" class="unit-link" data-unit="unit6">🔗 Unit 6: Connectors</a>
+            <a href="#" class="unit-link" data-unit="unit7">🔀 Unit 7: Conditionals</a>
+            <a href="#" class="unit-link" data-unit="unit8">🔋 Unit 8: Modal verbs</a>
+            <a href="#" class="unit-link" data-unit="unit9">🚀 Unit 9: Adverbs</a>
+            <a href="#" class="unit-link" data-unit="unit10">🔌 Unit 10: Phrasal verbs</a>
+            <a href="#" class="unit-link" data-unit="unit11">📊 Unit 11: Comparative & Superlative</a>
+            <a href="#" class="unit-link" data-unit="unit12">🔄 Unit 12: Passive Voice</a>
+            <a href="#" class="unit-link" data-unit="unit13">👥 Unit 13: Relative pronouns</a>
+            <a href="#" class="unit-link" data-unit="unit14">❓ Unit 14: Indefinite pronouns</a>
+        </div>
     </div>
 
-    <hr>
-    <div class="background unit-header" data-target="unit11">
-        <h1>🔄 Passive voice</h1>
-    </div>
-    <hr>
-    <div id="unit11" class="unit-content">
+    <div class="main-container">
+
+        <!-- UNIDAD 1: Pronouns -->
+        <div id="unit1" class="unit-container active">
+            <div class="background">
+                <h1>👤 Unit 1: Pronouns</h1>
+            </div>
+            
+            <div class="unit-content active">
+                <h2>👤 Pronouns & Possessives: The Master Guide</h2>
+                <p>En inglés, los pronombres son obligatorios. Esta guía muestra cómo cambian según su función y posición en la oración.</p>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>The Pronoun Matrix</caption>
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Object</th>
+                                <th>Possessive Adj.</th>
+                                <th>Possessive Pron.</th>
+                                <th>Reflexive</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>I</b><br><small>(Yo)</small></td>
+                                <td><b>Me</b><br><small>(Me/Mí)</small></td>
+                                <td><b>My</b><br><small>(Mi...)</small></td>
+                                <td><b>Mine</b><br><small>(Mío)</small></td>
+                                <td><b>Myself</b><br><small>(Yo mismo)</small></td>
+                            </tr>
+                            <tr>
+                                <td><b>You</b><br><small>(Tú)</small></td>
+                                <td><b>You</b><br><small>(Te/Ti)</small></td>
+                                <td><b>Your</b><br><small>(Tu...)</small></td>
+                                <td><b>Yours</b><br><small>(Tuyo)</small></td>
+                                <td><b>Yourself</b><br><small>(Tú mismo)</small></td>
+                            </tr>
+                            <tr>
+                                <td><b>He</b><br><small>(Él)</small></td>
+                                <td><b>Him</b><br><small>(Lo/Él)</small></td>
+                                <td><b>His</b><br><small>(Su... de él)</small></td>
+                                <td><b>His</b><br><small>(Suyo)</small></td>
+                                <td><b>Himself</b><br><small>(Él mismo)</small></td>
+                            </tr>
+                            <tr>
+                                <td><b>She</b><br><small>(Ella)</small></td>
+                                <td><b>Her</b><br><small>(La/Ella)</small></td>
+                                <td><b>Her</b><br><small>(Su... de ella)</small></td>
+                                <td><b>Hers</b><br><small>(Suyo)</small></td>
+                                <td><b>Herself</b><br><small>(Ella misma)</small></td>
+                            </tr>
+                            <tr>
+                                <td><b>It</b><br><small>(Eso)</small></td>
+                                <td><b>It</b><br><small>(Lo/Eso)</small></td>
+                                <td><b>Its</b><br><small>(Su... de eso)</small></td>
+                                <td><b>---</b></td>
+                                <td><b>Itself</b><br><small>(Eso mismo)</small></td>
+                            </tr>
+                            <tr>
+                                <td><b>We</b><br><small>(Nosotros)</small></td>
+                                <td><b>Us</b><br><small>(Nos/Nos.)</small></td>
+                                <td><b>Our</b><br><small>(Nuestro...)</small></td>
+                                <td><b>Ours</b><br><small>(Nuestro)</small></td>
+                                <td><b>Ourselves</b><br><small>(Nos. mismos)</small></td>
+                            </tr>
+                            <tr>
+                                <td><b>They</b><br><small>(Ellos)</small></td>
+                                <td><b>Them</b><br><small>(Los/Ellos)</small></td>
+                                <td><b>Their</b><br><small>(Su... de ellos)</small></td>
+                                <td><b>Theirs</b><br><small>(Suyo)</small></td>
+                                <td><b>Themselves</b><br><small>(Ellos mismos)</small></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cond-block first-border">
+                    <h3>1. Subject vs. Object Pronouns</h3>
+                    <div class="formula-box">Subject: <b>[Pronoun] + Verb</b></div>
+                    <div class="formula-box">Object: <b>Verb + [Pronoun]</b> / <b>Prep + [Pronoun]</b></div>
+                    <ul>
+                        <li><b>I / Me:</b> <i><b>I</b> love pizza, do you like <b>me</b>?</i> <span class="translation">(<b>Yo</b> amo la pizza, ¿te gusto <b>yo/a mí</b>?).</span></li>
+                        <li><b>She / Her:</b> <i><b>She</b> is here, talk to <b>her</b>.</i> <span class="translation">(<b>Ella</b> está aquí, habla con <b>ella</b>).</span></li>
+                        <li><b>They / Them:</b> <i><b>They</b> are late, call <b>them</b>.</i> <span class="translation">(<b>Ellos</b> están tarde, lláma<b>los</b>).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>2. Possessive Adjectives vs. Pronouns</h3>
+                    <div class="formula-box">Adj: <b>[Possessive Adj] + Noun (sustantivo)</b></div>
+                    <div class="formula-box">Pron: <b>Noun + is + [Possessive Pron]</b></div>
+                    <ul>
+                        <li><b>My / Mine:</b> <i>This is <b>my</b> phone. It is <b>mine</b>.</i> <span class="translation">(Este es <b>mi</b> teléfono. Es <b>mío</b>).</span></li>
+                        <li><b>Your / Yours:</b> <i>Is this <b>your</b> key? Yes, it's <b>yours</b>.</i> <span class="translation">(¿Es esta <b>tu</b> llave? Sí, es <b>tuya</b>).</span></li>
+                        <li><b>Their / Theirs:</b> <i>It's <b>their</b> dog. The dog is <b>theirs</b>.</i> <span class="translation">(Es <b>su</b> perro. El perro es <b>suyo/de ellos</b>).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block third-border">
+                    <h3>3. Reflexive Pronouns (Reflexivos)</h3>
+                    <div class="formula-box">Structure: <b>Subject + Verb + [Reflexive Pron]</b></div>
+                    <ul>
+                        <li><b>Myself:</b> <i>I saw <b>myself</b> in the mirror.</i> <span class="translation">(Me vi a <b>mí mismo</b> en el espejo).</span></li>
+                        <li><b>Yourself:</b> <i>Take care of <b>yourself</b>!</i> <span class="translation">(¡Cuida de <b>ti mismo</b>!).</span></li>
+                        <li><b>Themselves:</b> <i>They bought <b>themselves</b> a gift.</i> <span class="translation">(Ellos <b>se</b> compraron un regalo / para ellos mismos).</span></li>
+                    </ul>
+                </div>
+
+                <p class="note"><b>Grammar Rule:</b> Nunca uses un <b>Object Pronoun</b> (Me, Him, Us) como sujeto. <br> 
+                ❌ <i>Me am happy</i>. <br> 
+                ✅ <i>I am happy</i>.</p>
+            </div>
+        </div>
+
+        <!-- UNIDAD 2: Prepositions -->
+        <div id="unit2" class="unit-container">
+            <div class="background">
+                <h1>📍 Unit 2: Prepositions</h1>
+            </div>
+            
+            <div class="unit-content">
+                <h2>📍 Master Prepositions Matrix (Multi-use Edition)</h2>
+                <p>Esta tabla muestra cada preposición con sus distintos usos, significado y ejemplos en inglés y español.</p>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>Comprehensive Prepositions Guide (with Use, Meaning & Examples)</caption>
+                        <thead>
+                            <tr>
+                                <th>Preposition</th>
+                                <th>Uso específico / cuándo se usa</th>
+                                <th>Significado (Español)</th>
+                                <th>Ejemplo (English)</th>
+                                <th>Traducción (Español)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td colspan="5"><b>⭐ The "Big Three" (Multi-purpose)</b></td></tr>
+                            <tr>
+                                <td rowspan="2"><b>In</b></td>
+                                <td>Indica lugar dentro de un espacio</td>
+                                <td>En</td>
+                                <td><i>In the room.</i></td>
+                                <td>En la habitación</td>
+                            </tr>
+                            <tr>
+                                <td>Indica tiempo largo (meses, años, siglos)</td>
+                                <td>En</td>
+                                <td><i>In October.</i></td>
+                                <td>En octubre</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><b>On</b></td>
+                                <td>Sobre una superficie</td>
+                                <td>Sobre</td>
+                                <td><i>On the table.</i></td>
+                                <td>Sobre la mesa</td>
+                            </tr>
+                            <tr>
+                                <td>Para días o fechas exactas</td>
+                                <td>En</td>
+                                <td><i>On Monday.</i></td>
+                                <td>El lunes</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><b>At</b></td>
+                                <td>Punto exacto / lugar específico</td>
+                                <td>En</td>
+                                <td><i>At the station.</i></td>
+                                <td>En la estación</td>
+                            </tr>
+                            <tr>
+                                <td>Hora exacta o momento puntual</td>
+                                <td>A</td>
+                                <td><i>At 8 PM.</i></td>
+                                <td>A las 8</td>
+                            </tr>
+
+                            <tr><td colspan="5"><b>🏠 Place & Position (Lugar)</b></td></tr>
+                            <tr><td><b>Above</b></td><td>Encima sin tocar</td><td>Encima</td><td><i>Above the clouds.</i></td><td>Sobre las nubes</td></tr>
+                            <tr><td><b>Against</b></td><td>En contacto / apoyado</td><td>Contra</td><td><i>Lean against the wall.</i></td><td>Apoyado en la pared</td></tr>
+                            <tr><td><b>Behind</b></td><td>Detrás de algo</td><td>Detrás</td><td><i>Behind the curtain.</i></td><td>Detrás de la cortina</td></tr>
+                            <tr><td><b>Beside</b></td><td>Al lado de</td><td>Al lado</td><td><i>Beside the bed.</i></td><td>Al lado de la cama</td></tr>
+                            <tr><td><b>Below / Beneath</b></td><td>Debajo de</td><td>Debajo</td><td><i>Below the bridge.</i></td><td>Bajo el puente</td></tr>
+                            <tr><td><b>Between</b></td><td>Entre dos objetos</td><td>Entre</td><td><i>Between two hills.</i></td><td>Entre dos colinas</td></tr>
+                            <tr><td><b>Close to</b></td><td>Cerca de algo</td><td>Cerca de</td><td><i>Close to the school.</i></td><td>Cerca de la escuela</td></tr>
+                            <tr><td><b>In front of</b></td><td>Delante de</td><td>Frente a</td><td><i>In front of the car.</i></td><td>Frente al coche</td></tr>
+                            <tr><td><b>Inside</b></td><td>Dentro de</td><td>Dentro</td><td><i>Inside the house.</i></td><td>Dentro de la casa</td></tr>
+                            <tr><td><b>Near</b></td><td>Cerca de</td><td>Cerca</td><td><i>Near the river.</i></td><td>Cerca del río</td></tr>
+                            <tr><td><b>Opposite</b></td><td>Frente a</td><td>Enfrente</td><td><i>Opposite the park.</i></td><td>Frente al parque</td></tr>
+                            <tr><td><b>Outside</b></td><td>Fuera de</td><td>Fuera</td><td><i>Outside the building.</i></td><td>Fuera del edificio</td></tr>
+                            <tr><td><b>Over</b></td><td>Encima cubriendo algo</td><td>Encima</td><td><i>Over the table.</i></td><td>Sobre la mesa</td></tr>
+                            <tr><td><b>Under / Underneath</b></td><td>Debajo</td><td>Debajo</td><td><i>Under the desk.</i></td><td>Bajo el escritorio</td></tr>
+                            <tr><td><b>Upon</b></td><td>Sobre / formal</td><td>Sobre</td><td><i>Upon the hill.</i></td><td>Sobre la colina</td></tr>
+
+                            <tr><td colspan="5"><b>🚀 Movement (Dirección)</b></td></tr>
+                            <tr><td><b>Across</b></td><td>Cruzar algo</td><td>A través de</td><td><i>Across the street.</i></td><td>A través de la calle</td></tr>
+                            <tr><td><b>Along</b></td><td>A lo largo</td><td>A lo largo de</td><td><i>Along the road.</i></td><td>A lo largo de la carretera</td></tr>
+                            <tr><td><b>Around</b></td><td>Alrededor</td><td>Alrededor</td><td><i>Around the park.</i></td><td>Alrededor del parque</td></tr>
+                            <tr><td><b>Away from</b></td><td>Alejarse de</td><td>Lejos de</td><td><i>Away from danger.</i></td><td>Lejos del peligro</td></tr>
+                            <tr><td><b>Down</b></td><td>Hacia abajo</td><td>Abajo</td><td><i>Down the hill.</i></td><td>Cuesta abajo</td></tr>
+                            <tr><td><b>From</b></td><td>Origen / punto de partida</td><td>Desde</td><td><i>From Spain.</i></td><td>Desde España</td></tr>
+                            <tr><td><b>Into</b></td><td>Hacia el interior</td><td>Dentro</td><td><i>Into the water.</i></td><td>Dentro del agua</td></tr>
+                            <tr><td><b>Off</b></td><td>Separarse de una superficie</td><td>Fuera de</td><td><i>Off the table.</i></td><td>Fuera de la mesa</td></tr>
+                            <tr><td><b>Onto</b></td><td>Subir o colocar sobre</td><td>Sobre</td><td><i>Onto the roof.</i></td><td>Sobre el techo</td></tr>
+                            <tr><td><b>Out of</b></td><td>Salir de</td><td>Fuera de</td><td><i>Out of the room.</i></td><td>Fuera de la habitación</td></tr>
+                            <tr><td><b>Past</b></td><td>Pasar por</td><td>Más allá de</td><td><i>Past the store.</i></td><td>Pasar por la tienda</td></tr>
+                            <tr><td><b>Towards</b></td><td>Hacia un objetivo</td><td>Hacia</td><td><i>Towards the city.</i></td><td>Hacia la ciudad</td></tr>
+                            <tr><td><b>Up</b></td><td>Hacia arriba</td><td>Arriba</td><td><i>Up the mountain.</i></td><td>Subir la montaña</td></tr>
+
+                            <tr><td colspan="5"><b>⏳ Time</b></td></tr>
+                            <tr><td><b>After</b></td><td>Posterior a un evento</td><td>Después</td><td><i>After dinner.</i></td><td>Después de la cena</td></tr>
+                            <tr><td><b>Before</b></td><td>Anterior a un evento</td><td>Antes</td><td><i>Before the exam.</i></td><td>Antes del examen</td></tr>
+                            <tr><td><b>During</b></td><td>Durante un período de tiempo</td><td>Durante</td><td><i>During the meeting.</i></td><td>Durante la reunión</td></tr>
+                            <tr><td><b>Since</b></td><td>Desde un punto en el pasado</td><td>Desde</td><td><i>Since Monday.</i></td><td>Desde el lunes</td></tr>
+                            <tr><td><b>Until</b></td><td>Hasta un momento límite</td><td>Hasta</td><td><i>Until midnight.</i></td><td>Hasta la medianoche</td></tr>
+                            <tr><td><b>Ago</b></td><td>Tiempo transcurrido en el pasado</td><td>Hace</td><td><i>Two years ago.</i></td><td>Hace dos años</td></tr>
+                            <tr><td><b>Circa</b></td><td>Aproximadamente / alrededor de</td><td>Aprox.</td><td><i>Circa 1900.</i></td><td>Alrededor de 1900</td></tr>
+                            <tr><td><b>Throughout</b></td><td>Durante todo un período</td><td>Durante todo</td><td><i>Throughout the day.</i></td><td>Durante todo el día</td></tr>
+
+                            <tr><td colspan="5"><b>🧠 Relation / Other Uses</b></td></tr>
+                            <tr>
+                                <td rowspan="2"><b>About</b></td>
+                                <td>Acerca de un tema</td>
+                                <td>Sobre</td>
+                                <td><i>About science.</i></td>
+                                <td>Sobre ciencia</td>
+                            </tr>
+                            <tr>
+                                <td>Alrededor de / aproximación</td>
+                                <td>Alrededor de</td>
+                                <td><i>About 5 PM.</i></td>
+                                <td>Alrededor de las 5</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><b>By</b></td>
+                                <td>Medio / autoría</td>
+                                <td>Por / en</td>
+                                <td><i>By bus.</i></td>
+                                <td>En bus</td>
+                            </tr>
+                            <tr>
+                                <td>Debido a / causa</td>
+                                <td>Por</td>
+                                <td><i>By mistake.</i></td>
+                                <td>Por error</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><b>For</b></td>
+                                <td>Propósito / destinatario</td>
+                                <td>Para</td>
+                                <td><i>This gift is for you.</i></td>
+                                <td>Este regalo es para ti</td>
+                            </tr>
+                            <tr>
+                                <td>Duración de tiempo</td>
+                                <td>Durante</td>
+                                <td><i>For two weeks.</i></td>
+                                <td>Durante dos semanas</td>
+                            </tr>
+                            <tr><td><b>Per</b></td><td>Por cada unidad</td><td>Por</td><td><i>60 km per hour.</i></td><td>60 km por hora</td></tr>
+                            <tr><td><b>With</b></td><td>Compañía / herramienta</td><td>Con</td><td><i>With a hammer.</i></td><td>Con un martillo</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="note"><b>Grammar Tip:</b> Las preposiciones con múltiples usos se combinan en una sola celda para mostrar claramente todos los usos sin repetir la palabra.</p>
+            </div>
+        </div>
+
+        <!-- UNIDAD 3: Verb tenses -->
+        <div id="unit3" class="unit-container">
+            <div class="background">
+                <h1>⏳ Unit 3: Verb tenses</h1>
+            </div>
+            
+            <div class="unit-content">
+                <h2 style="margin-top:20px;">⏳ Verb Tenses: The Complete Timeline</h2>
+                <p>Dominar los tiempos verbales es entender cuándo ocurre la acción. Aquí tienes las estructuras para Presente, Pasado y Futuro.</p>
+
+                <div class="cond-block first-border">
+                    <h3>1. Present Tenses (Presente)</h3>
+                    
+                    <p><b>Present Simple:</b> Rutinas y verdades.</p>
+                    <div class="formula-box">Structure: Subject + Verb (s/es for 3rd person)</div>
+                    <ul>
+                        <li><i>He <b>drinks</b> coffee every morning.</i> <span class="translation">(Él bebe café cada mañana).</span></li>
+                    </ul>
+
+                    <p><b>Present Continuous:</b> Acciones ahora mismo.</p>
+                    <div class="formula-box">Structure: Subject + am/is/are + Verb-ing</div>
+                    <ul>
+                        <li><i>They <b>are playing</b> soccer now.</i> <span class="translation">(Ellos están jugando fútbol ahora).</span></li>
+                    </ul>
+
+                    <p><b>Present Perfect:</b> Acciones que conectan pasado y presente.</p>
+                    <div class="formula-box">Structure: Subject + have/has + Past Participle</div>
+                    <ul>
+                        <li><i>I <b>have lived</b> here for 5 years.</i> <span class="translation">(He vivido aquí por 5 años).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>2. Past Tenses (Pasado)</h3>
+
+                    <p><b>Past Simple:</b> Acciones terminadas.</p>
+                    <div class="formula-box">Structure: Subject + Verb-ed (or irregular)</div>
+                    <ul>
+                        <li><i>We <b>watched</b> a movie last night.</i> <span class="translation">(Vimos una película anoche).</span></li>
+                    </ul>
+
+                    <p><b>Past Continuous:</b> Acciones en progreso en el pasado.</p>
+                    <div class="formula-box">Structure: Subject + was/were + Verb-ing</div>
+                    <ul>
+                        <li><i>I <b>was studying</b> when you called.</i> <span class="translation">(Yo estaba estudiando cuando llamaste).</span></li>
+                    </ul>
+
+                    <p><b>Past Perfect:</b> "El pasado del pasado" (una acción antes que otra).</p>
+                    <div class="formula-box">Structure: Subject + had + Past Participle</div>
+                    <ul>
+                        <li><i>The train <b>had left</b> when I arrived.</i> <span class="translation">(El tren se había ido cuando llegué).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block third-border">
+                    <h3>3. Future Tenses (Futuro)</h3>
+
+                    <p><b>Future Simple (Will):</b> Promesas o decisiones rápidas.</p>
+                    <div class="formula-box">Structure: Subject + will + Verb (base form)</div>
+                    <ul>
+                        <li><i>I <b>will help</b> you tomorrow.</i> <span class="translation">(Te ayudaré mañana).</span></li>
+                    </ul>
+
+                    <p><b>Future (Going to):</b> Planes e intenciones.</p>
+                    <div class="formula-box">Structure: Subject + am/is/are + going to + Verb</div>
+                    <ul>
+                        <li><i>We <b>are going to</b> buy a house.</i> <span class="translation">(Vamos a comprar una casa).</span></li>
+                    </ul>
+
+                    <p><b>Future Perfect:</b> Acciones que habrán terminado en el futuro.</p>
+                    <div class="formula-box">Structure: Subject + will have + Past Participle</div>
+                    <ul>
+                        <li><i>I <b>will have finished</b> by 6 PM.</i> <span class="translation">(Habré terminado para las 6 PM).</span></li>
+                    </ul>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>Full Verb Tenses Matrix</caption>
+                        <thead>
+                            <tr>
+                                <th>Tense</th>
+                                <th>SIMPLE (Habits/Facts)</th>
+                                <th>CONTINUOUS (In Progress)</th>
+                                <th>PERFECT (Completed/Connected)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>PRESENT</strong></td>
+                                <td>
+                                    <small>Subj + Verb(-s)</small><br>
+                                    <b>I eat</b><br>
+                                    <i>(Yo como)</i>
+                                </td>
+                                <td>
+                                    <small>am/is/are + V-ing</small><br>
+                                    <b>I am eating</b><br>
+                                    <i>(Estoy comiendo)</i>
+                                </td>
+                                <td>
+                                    <small>have/has + Participle</small><br>
+                                    <b>I have eaten</b><br>
+                                    <i>(He comido)</i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>PAST</strong></td>
+                                <td>
+                                    <small>Subj + V-ed / Irreg.</small><br>
+                                    <b>I ate</b><br>
+                                    <i>(Comí)</i>
+                                </td>
+                                <td>
+                                    <small>was/were + V-ing</small><br>
+                                    <b>I was eating</b><br>
+                                    <i>(Estaba comiendo)</i>
+                                </td>
+                                <td>
+                                    <small>had + Participle</small><br>
+                                    <b>I had eaten</b><br>
+                                    <i>(Había comido)</i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>FUTURE</strong></td>
+                                <td>
+                                    <small>will + Verb</small><br>
+                                    <b>I will eat</b><br>
+                                    <i>(Comeré)</i>
+                                </td>
+                                <td>
+                                    <small>will be + V-ing</small><br>
+                                    <b>I will be eating</b><br>
+                                    <i>(Estaré comiendo)</i>
+                                </td>
+                                <td>
+                                    <small>will have + Participle</small><br>
+                                    <b>I will have eaten</b><br>
+                                    <i>(Habré comido)</i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="note"><b>Recuerda:</b> El <b>Past Participle</b> es la tercera columna de los verbos irregulares (ej: <i>Go - Went - <b>Gone</b></i>). ¡Es vital para todos los tiempos Perfectos!</p>
+            </div>
+        </div>
+
+        <!-- UNIDAD 4: Articles -->
+        <div id="unit4" class="unit-container">
+            <div class="background">
+                <h1>📐 Unit 4: Articles</h1>
+            </div>
+            
+            <div class="unit-content">
+                <h2 style="margin-top:20px;">📐 Mastery of Articles</h2>
+
+                <div class="cond-block first-border">
+                    <h3>1. Indefinite Articles (A / AN)</h3>
+                    <p>Se usan para cosas generales o cuando mencionas algo por primera vez. Solo para <b>Singular + Contable</b>.</p>
+                    
+                    <div class="formula-box">
+                        <strong>A</strong> + Consonant Sound <br>
+                        <strong>AN</strong> + Vowel Sound
+                    </div>
+
+                    <ul>
+                        <li><b>A:</b> A doctor, a big elephant, a university.</li>
+                        <li><b>AN:</b> An orange, an interesting book, an hour.</li>
+                    </ul>
+                    <p class="note"><b>Note:</b> Lo que importa es el <b>sonido</b>, no la letra. Por eso decimos "An hour" (h muda) y "A university" (sonido semivocal 'y').</p>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>2. Definite Article (THE)</h3>
+                    <p>Se usa para cosas específicas, únicas o que ya han sido mencionadas anteriormente.</p>
+                    
+                    <div class="formula-box">
+                        <strong>THE</strong> + Singular / Plural / Uncountable
+                    </div>
+
+                    <ul>
+                        <li><i>The moon is beautiful tonight.</i> (Única)</li>
+                        <li><i>I saw a movie. <b>The</b> movie was sad.</i> (Ya mencionado)</li>
+                    </ul>
+                </div>
+
+                <div class="cond-block third-border">
+                    <h3>3. Zero Article (Ø)</h3>
+                    <p>Casos donde NO se usa artículo. Muy común al hablar de cosas en general.</p>
+
+                    <ul>
+                        <li><b>General Plurals:</b> <i>I like cats.</i> (En general, todos los gatos).</li>
+                        <li><b>Abstract:</b> <i>Love is all you need.</i></li>
+                        <li><b>Proper Names:</b> <i>She lives in Paris.</i></li>
+                    </ul>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>Articles Cheat Sheet</caption>
+                        <thead>
+                            <tr>
+                                <th>Article</th>
+                                <th>Type</th>
+                                <th>Noun Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A / An</td>
+                                <td>Indefinite</td>
+                                <td>Singular Contable</td>
+                            </tr>
+                            <tr>
+                                <td>The</td>
+                                <td>Definite</td>
+                                <td>Any (Specific)</td>
+                            </tr>
+                            <tr>
+                                <td>No Article</td>
+                                <td>General</td>
+                                <td>Plural / Abstract</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <!-- UNIDAD 5: Quantifiers -->
+        <div id="unit5" class="unit-container">
+            <div class="background">
+                <h1>⚖️ Unit 5: Quantifiers</h1>
+            </div>
+            
+            <div class="unit-content">
+                <h2>⚖️ Quantifiers Master Guide</h2>
+                <p>Los cuantificadores indican la cantidad de un sustantivo. Para usarlos bien, primero debes identificar si el sustantivo es <b>Contable</b> (individual) o <b>Incontable</b> (masa/concepto).</p>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>Quantifiers Matrix</caption>
+                        <thead>
+                            <tr>
+                                <th>Quantifier</th>
+                                <th>Noun Type</th>
+                                <th>Sentence (+) (-) (?)</th>
+                                <th>Meaning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Many</b></td>
+                                <td>Countable Plural</td>
+                                <td>(-) (?) </td>
+                                <td>Muchos / Muchas</td>
+                            </tr>
+                            <tr>
+                                <td><b>Much</b></td>
+                                <td>Uncountable</td>
+                                <td>(-) (?)</td>
+                                <td>Mucho / Mucha</td>
+                            </tr>
+                            <tr>
+                                <td><b>A lot of</b></td>
+                                <td>Both</td>
+                                <td>(+) (-)</td>
+                                <td>Un montón de / Mucho</td>
+                            </tr>
+                            <tr>
+                                <td><b>Some</b></td>
+                                <td>Both</td>
+                                <td>(+) (Offers)</td>
+                                <td>Algo de / Algunos</td>
+                            </tr>
+                            <tr>
+                                <td><b>Any</b></td>
+                                <td>Both</td>
+                                <td>(-) (?)</td>
+                                <td>Nada de / Ningún</td>
+                            </tr>
+                            <tr>
+                                <td><b>A few</b></td>
+                                <td>Countable Plural</td>
+                                <td>(+)</td>
+                                <td>Unos pocos / Algunos</td>
+                            </tr>
+                            <tr>
+                                <td><b>A little</b></td>
+                                <td>Uncountable</td>
+                                <td>(+)</td>
+                                <td>Un poco de</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="cond-block first-border">
+                    <h3>1. Much vs. Many (Grandes cantidades)</h3>
+                    <div class="formula-box">Structure: <b>Many + Plural Noun</b> (Friends, Days, Books)</div>
+                    <div class="formula-box">Structure: <b>Much + Singular Uncountable</b> (Water, Sugar, Money)</div>
+                    
+                    <ul>
+                        <li><b>Many:</b> <i>I have <b>many</b> ideas for the project.</i> <span class="translation">(Tengo muchas ideas para el proyecto).</span></li>
+                        <li><b>Much:</b> <i>We don't have <b>much</b> time left.</i> <span class="translation">(No nos queda mucho tiempo).</span></li>
+                        <li><b>A lot of:</b> <i>She has <b>a lot of</b> energy.</i> <span class="translation">(Ella tiene mucha energía - Se usa para ambos en afirmativo).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>2. Some vs. Any (Cantidades Indefinidas)</h3>
+                    <div class="formula-box">Structure (+): <b>Subject + Verb + Some + Noun</b></div>
+                    <div class="formula-box">Structure (-): <b>Subject + Don't/Doesn't + Any + Noun</b></div>
+                    <div class="formula-box">Structure (?): <b>Do/Does + Subject + Any + Noun?</b></div>
+                    
+                    <ul>
+                        <li><b>Some (+):</b> <i>I bought <b>some</b> apples.</i> <span class="translation">(Compré algunas manzanas).</span></li>
+                        <li><b>Any (-):</b> <i>I don't have <b>any</b> information.</i> <span class="translation">(No tengo nada de información).</span></li>
+                        <li><b>Any (?):</b> <i>Are there <b>any</b> cookies left?</i> <span class="translation">(¿Queda alguna galleta?).</span></li>
+                    </ul>
+                    <p class="note"><b>Exception:</b> Usa <b>Some</b> en preguntas si estás pidiendo algo o invitando: <i>"Can I have <b>some</b> water?"</i></p>
+                </div>
+
+                <div class="cond-block third-border">
+                    <h3>3. A few vs. A little (Pequeñas cantidades)</h3>
+                    <div class="formula-box">Structure: <b>A few + Countable Plural</b></div>
+                    <div class="formula-box">Structure: <b>A little + Uncountable</b></div>
+                    
+                    <ul>
+                        <li><b>A few:</b> <i>I have <b>a few</b> friends in New York.</i> <span class="translation">(Tengo unos pocos amigos en Nueva York).</span></li>
+                        <li><b>A little:</b> <i>I need <b>a little</b> help with this.</i> <span class="translation">(Necesito un poco de ayuda con esto).</span></li>
+                    </ul>
+                </div>
+
+                <div class="grid-container">
+                    <div class="card">
+                        <div class="english">Countable Nouns</div>
+                        <p class="spanish">Se pueden contar</p>
+                        <hr>
+                        <p>One chair, two chairs...<br>Usa: <b>Many, A few.</b></p>
+                    </div>
+                    <div class="card">
+                        <div class="english">Uncountable Nouns</div>
+                        <p class="spanish">No se pueden contar</p>
+                        <hr>
+                        <p>Water, Luck, Air...<br>Usa: <b>Much, A little.</b></p>
+                    </div>
+                </div>
+
+                <p class="note"><b>Grammar Hack:</b> Si no estás seguro de si usar <i>Much</i> o <i>Many</i> en una oración afirmativa, usa siempre <b>"A lot of"</b>. ¡Funciona para todo!</p>
+            </div>
+        </div>
+
+        <!-- UNIDAD 6: Connectors -->
+        <div id="unit6" class="unit-container">
+            <div class="background">
+                <h1>🔗 Unit 6: Connectors</h1>
+            </div>
+            
+            <div class="unit-content">
+                <h2>🔗 Connectors & Linking Words</h2>
+                <p>Esta tabla organiza los conectores en inglés según su función, con significado, uso y ejemplos.</p>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>Complete Connectors Matrix</caption>
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Connector</th>
+                                <th>Usage / Explanation</th>
+                                <th>Meaning (Español)</th>
+                                <th>Example (EN / ES)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <!-- Addition -->
+                            <tr><td colspan="5"><b>➕ Addition (Sumar ideas)</b></td></tr>
+                            <tr><td rowspan="8">Addition</td><td>And</td><td>Para unir ideas simples</td><td>Y</td><td><i>I like coffee and tea.</i> (Me gusta el café y el té)</td></tr>
+                            <tr><td>Second</td><td>Para enumerar en segundo lugar</td><td>En segundo lugar</td><td><i>Second, we need to review the plan.</i> (En segundo lugar, necesitamos revisar el plan)</td></tr>
+                            <tr><td>Then / Next</td><td>Indicar siguiente paso</td><td>Después / Luego</td><td><i>Then, we left the house.</i> (Luego, salimos de la casa)</td></tr>
+                            <tr><td>Also / Too</td><td>Para añadir información</td><td>También</td><td><i>I also like music.</i> (También me gusta la música)</td></tr>
+                            <tr><td>As well as</td><td>Para añadir ideas importantes</td><td>Además de</td><td><i>He enjoys sports as well as reading.</i> (Disfruta deportes además de leer)</td></tr>
+                            <tr><td>Moreover / Furthermore</td><td>Para reforzar información formal</td><td>Además / Es más</td><td><i>She is talented; moreover, she works hard.</i> (Es talentosa; además, trabaja duro)</td></tr>
+                            <tr><td>In fact / As a matter of fact</td><td>Para enfatizar un hecho</td><td>De hecho / Por cierto</td><td><i>In fact, I never liked pizza.</i> (De hecho, nunca me gustó la pizza)</td></tr>
+                            <tr><td>Besides</td><td>Para añadir información extra</td><td>Además / Por otra parte</td><td><i>Besides, we need to finish early.</i> (Además, necesitamos terminar temprano)</td></tr>
+
+                            <!-- Contrast -->
+                            <tr><td colspan="5"><b>⚡ Contrast (Contrastar ideas)</b></td></tr>
+                            <tr><td rowspan="8">Contrast</td><td>But</td><td>Contrastar ideas simples</td><td>Pero</td><td><i>I wanted to go, but it rained.</i> (Quería ir, pero llovió)</td></tr>
+                            <tr><td>However</td><td>Contrastar ideas formales</td><td>Sin embargo</td><td><i>It was cold; however, he went out.</i> (Hacía frío; sin embargo, salió)</td></tr>
+                            <tr><td>Nonetheless / Nevertheless</td><td>Contraste formal</td><td>No obstante</td><td><i>It was late; nevertheless, we kept going.</i> (Era tarde; no obstante, seguimos)</td></tr>
+                            <tr><td>Yet / Even so</td><td>Contraste con matiz sorprendente</td><td>Sin embargo / Aun así</td><td><i>The task is hard, yet he completed it.</i> (La tarea es difícil, aun así la completó)</td></tr>
+                            <tr><td>Still</td><td>Contraste informal</td><td>De todas maneras</td><td><i>It was raining. Still, we went out.</i> (Estaba lloviendo. De todas maneras, salimos)</td></tr>
+                            <tr><td>Instead</td><td>Para indicar sustitución</td><td>En lugar de</td><td><i>He didn't walk, he ran instead.</i> (No caminó, corrió en su lugar)</td></tr>
+                            <tr><td>Whereas / While</td><td>Comparación o contraste de acciones</td><td>Mientras que</td><td><i>She likes coffee, while he prefers tea.</i> (A ella le gusta el café, mientras que él prefiere té)</td></tr>
+
+                            <!-- Causal -->
+                            <tr><td colspan="5"><b>🧩 Causal (Causa / Razón)</b></td></tr>
+                            <tr><td rowspan="8">Causal</td><td>Because</td><td>Indicar razón directa</td><td>Porque</td><td><i>I'm late because of traffic.</i> (Llegué tarde por el tráfico)</td></tr>
+                            <tr><td>Because of</td><td>Indicar razón con sustantivo</td><td>Debido a</td><td><i>We stayed home because of the rain.</i> (Nos quedamos en casa debido a la lluvia)</td></tr>
+                            <tr><td>For</td><td>Indicar causa formal</td><td>Por</td><td><i>He was punished for being late.</i> (Fue castigado por llegar tarde)</td></tr>
+                            <tr><td>Since / As</td><td>Indicar motivo</td><td>Puesto que</td><td><i>Since it was cold, we stayed inside.</i> (Puesto que hacía frío, nos quedamos dentro)</td></tr>
+                            <tr><td>Due to / Owing to</td><td>Indicar causa formal</td><td>Debido a</td><td><i>The flight was delayed due to weather.</i> (El vuelo se retrasó debido al clima)</td></tr>
+                            <tr><td>In order to</td><td>Expresar propósito</td><td>Para / Con tal de</td><td><i>He studied hard in order to pass.</i> (Estudió mucho para aprobar)</td></tr>
+                            <tr><td>By means of</td><td>Indicar medio o instrumento</td><td>Por medio de</td><td><i>They solved it by means of teamwork.</i> (Lo resolvieron por medio del trabajo en equipo)</td></tr>
+
+                            <!-- Comparative -->
+                            <tr><td colspan="5"><b>⚖️ Comparative (Comparativos)</b></td></tr>
+                            <tr><td rowspan="5">Comparative</td><td>As</td><td>Indicar igualdad</td><td>Como</td><td><i>He is as tall as his brother.</i> (Él es tan alto como su hermano)</td></tr>
+                            <tr><td>As… as</td><td>Comparación completa</td><td>Tan… como</td><td><i>She is as smart as him.</i> (Ella es tan lista como él)</td></tr>
+                            <tr><td>Not as / So… as</td><td>Indicar desigualdad</td><td>No tan… como</td><td><i>This task is not as easy as I thought.</i> (Esta tarea no es tan fácil como pensé)</td></tr>
+                            <tr><td>As if / As though</td><td>Comparación hipotética</td><td>Como si</td><td><i>He talks as if he knows everything.</i> (Habla como si lo supiera todo)</td></tr>
+                            <tr><td>Than</td><td>Comparación directa</td><td>Que</td><td><i>She is taller than me.</i> (Ella es más alta que yo)</td></tr>
+
+                            <!-- Concessive -->
+                            <tr><td colspan="5"><b>⚖️ Concessive (Concesivos)</b></td></tr>
+                            <tr><td rowspan="5">Concessive</td><td>Although / Though / Even though</td><td>Expresar concesión</td><td>Aunque</td><td><i>Although it was cold, she wore a dress.</i> (Aunque hacía frío, ella usó un vestido)</td></tr>
+                            <tr><td>Despite / In spite of</td><td>Expresar concesión</td><td>A pesar de</td><td><i>Despite the rain, we went out.</i> (A pesar de la lluvia, salimos)</td></tr>
+                            <tr><td>Even if</td><td>Posibilidad de concesión</td><td>Incluso si</td><td><i>Even if it rains, we will go.</i> (Incluso si llueve, iremos)</td></tr>
+                            <tr><td>Not even if</td><td>Negación de concesión</td><td>Ni siquiera si</td><td><i>Not even if he asks, I won't help.</i> (Ni siquiera si pide, no ayudaré)</td></tr>
+                            <tr><td>Regardless of</td><td>Ignorar condición o situación</td><td>Sin importar</td><td><i>Regardless of the weather, we play.</i> (Sin importar el clima, jugamos)</td></tr>
+
+                            <!-- Conclusive -->
+                            <tr><td colspan="5"><b>✅ Conclusive / Conclusion (Conclusivos)</b></td></tr>
+                            <tr><td rowspan="5">Conclusive</td><td>Therefore</td><td>Concluir idea</td><td>Por lo tanto</td><td><i>It rained, therefore we stayed home.</i> (Llovió, por lo tanto nos quedamos en casa)</td></tr>
+                            <tr><td>Hence</td><td>Concluir idea formal</td><td>De ahí</td><td><i>The roads were icy, hence the accident.</i> (Las carreteras estaban heladas, de ahí el accidente)</td></tr>
+                            <tr><td>Thus</td><td>Concluir idea formal</td><td>Por lo tanto / Así</td><td><i>He forgot the keys, thus we couldn't enter.</i> (Olvidó las llaves, así que no pudimos entrar)</td></tr>
+                            <tr><td>So</td><td>Conclusión informal</td><td>Entonces</td><td><i>It was raining, so we stayed home.</i> (Estaba lloviendo, entonces nos quedamos en casa)</td></tr>
+                            <tr><td>Consequently</td><td>Conclusión formal</td><td>Por lo tanto / En consecuencia</td><td><i>He didn't study; consequently, he failed.</i> (No estudió; en consecuencia, reprobó)</td></tr>
+
+                            <!-- Conditional -->
+                            <tr><td colspan="5"><b>⚠️ Conditional (Condicionales)</b></td></tr>
+                            <tr><td rowspan="4">Conditional</td><td>If / Whether</td><td>Expresar condición</td><td>Si</td><td><i>If it rains, we will stay home.</i> (Si llueve, nos quedaremos en casa)</td></tr>
+                            <tr><td>Unless</td><td>Negativa condicional</td><td>A menos que</td><td><i>You can't leave unless you finish.</i> (No puedes salir a menos que termines)</td></tr>
+                            <tr><td>Provided / Providing / As long as</td><td>Condición positiva</td><td>Mientras que / Siempre que</td><td><i>We can go provided it doesn't rain.</i> (Podemos ir mientras no llueva)</td></tr>
+                            <tr><td>In case (of)</td><td>Precaución / condición</td><td>En caso</td><td><i>Take an umbrella in case it rains.</i> (Lleva un paraguas en caso de que llueva)</td></tr>
+
+                            <!-- Continuative -->
+                            <tr><td colspan="5"><b>🔁 Continuative (Continuativos)</b></td></tr>
+                            <tr><td rowspan="5">Continuative</td><td>Then</td><td>Para añadir información sobre una idea</td><td>Entonces</td><td><i>Then, we went to the park.</i> (Entonces, fuimos al parque)</td></tr>
+                            <tr><td>Moreover / Furthermore / Besides</td><td>Para reforzar o añadir información</td><td>Además / Por otra parte / Para colmo</td><td><i>Moreover, it was a good day.</i> (Además, fue un buen día)</td></tr>
+                            <tr><td>In addition</td><td>Para sumar información</td><td>Además de</td><td><i>In addition, she helped me.</i> (Además, ella me ayudó)</td></tr>
+                            <tr><td>Not only… but also</td><td>Para enfatizar información adicional</td><td>No solo… sino que también / Incluso</td><td><i>Not only is he smart, but also kind.</i> (No solo es inteligente, sino también amable)</td></tr>
+                            <tr><td>What’s more</td><td>Para enfatizar información adicional</td><td>Más</td><td><i>What's more, he won the prize.</i> (Además, ganó el premio)</td></tr>
+
+                            <!-- Disjunctive -->
+                            <tr><td colspan="5"><b>❓ Disjunctive (Disyuntivos)</b></td></tr>
+                            <tr><td rowspan="5">Disjunctive</td><td>Or</td><td>Dar opciones</td><td>O</td><td><i>You can call or email.</i> (Puedes llamar o enviar un correo)</td></tr>
+                            <tr><td>Either… or</td><td>Dar opciones</td><td>O… o</td><td><i>Either you come or stay home.</i> (O vienes o te quedas en casa)</td></tr>
+                            <tr><td>Neither… nor</td><td>Negación de opciones</td><td>No… ni</td><td><i>Neither he nor I agree.</i> (Ni él ni yo estamos de acuerdo)</td></tr>
+                            <tr><td>Whether… or</td><td>Indicar alternativas</td><td>Si… o</td><td><i>Whether you like it or not, we go.</i> (Si te gusta o no, vamos)</td></tr>
+                            <tr><td>Or else</td><td>Advertencia / alternativa</td><td>O sino</td><td><i>Hurry up, or else we miss the train.</i> (Apresúrate, o sino perderemos el tren)</td></tr>
+
+                            <!-- Functional -->
+                            <tr><td colspan="5"><b>⚙️ Functional (Funcionales)</b></td></tr>
+                            <tr><td rowspan="3">Functional</td><td>So</td><td>Indicar consecuencia o razón</td><td>Entonces</td><td><i>It was late, so we left.</i> (Era tarde, entonces nos fuimos)</td></tr>
+                            <tr><td>So that</td><td>Indicar propósito</td><td>Para que</td><td><i>I explained it so that he understood.</i> (Lo expliqué para que entendiera)</td></tr>
+                            <tr><td>So as to</td><td>Indicar propósito formal</td><td>Para que / De manera que</td><td><i>He whispered so as not to wake her.</i> (Susurró para no despertarla)</td></tr>
+
+                            <!-- Sequential -->
+                            <tr><td colspan="5"><b>⏩ Sequential (Secuenciales)</b></td></tr>
+                            <tr><td rowspan="9">Sequential</td><td>First / Firstly</td><td>Para enumerar ideas</td><td>Primero / En primer lugar</td><td><i>First, we checked the tickets.</i> (Primero, revisamos los boletos)</td></tr>
+                            <tr><td>Second / Secondly</td><td>Para enumerar ideas</td><td>Segundo / En segundo lugar</td><td><i>Second, we prepared the room.</i> (Segundo, preparamos la habitación)</td></tr>
+                            <tr><td>Next / Then</td><td>Para enumerar ideas</td><td>Seguidamente / Luego</td><td><i>Next, we opened the doors.</i> (Seguidamente, abrimos las puertas)</td></tr>
+                            <tr><td>After / Afterwards</td><td>Para enumerar ideas</td><td>Después de / Más tarde</td><td><i>After lunch, we went for a walk.</i> (Después del almuerzo, salimos a caminar)</td></tr>
+                            <tr><td>In the beginning / In the end</td><td>Para enumerar ideas</td><td>Al principio / Al final</td><td><i>In the beginning, it was difficult.</i> (Al principio, fue difícil)</td></tr>
+                            <tr><td>At first</td><td>Para enumerar ideas</td><td>Al principio</td><td><i>At first, I was nervous.</i> (Al principio, estaba nervioso)</td></tr>
+                            <tr><td>Finally / Eventually</td><td>Para enumerar ideas</td><td>Finalmente / Al final</td><td><i>Finally, we solved the problem.</i> (Finalmente, resolvimos el problema)</td></tr>
+                            <tr><td>Last but not least</td><td>Para enumerar ideas</td><td>Por último, si bien no menos</td><td><i>Last but not least, thanks to all.</i> (Por último, gracias a todos)</td></tr>
+                            <tr><td>Last of all / Lastly</td><td>Para enumerar ideas</td><td>Por último</td><td><i>Lastly, we summarized the key points.</i> (Por último, resumimos los puntos clave)</td></tr>
+
+                            <!-- Exemplification -->
+                            <tr><td colspan="5"><b>📌 Exemplification (Para dar ejemplos)</b></td></tr>
+                            <tr><td rowspan="4">Exemplification</td><td>For example</td><td>Dar ejemplo</td><td>Por ejemplo</td><td><i>For example, cats are independent.</i> (Por ejemplo, los gatos son independientes)</td></tr>
+                            <tr><td>For instance</td><td>Dar ejemplo</td><td>Por ejemplo</td><td><i>For instance, she arrived late.</i> (Por ejemplo, llegó tarde)</td></tr>
+                            <tr><td>Such as</td><td>Dar ejemplo</td><td>Tal como</td><td><i>Fruits such as apples and oranges are healthy.</i> (Frutas tal como manzanas y naranjas son saludables)</td></tr>
+                            <tr><td>Like</td><td>Dar ejemplo</td><td>Como</td><td><i>Animals like dogs and cats are pets.</i> (Animales como perros y gatos son mascotas)</td></tr>
+                            <tr><td>Apart from</td><td>Dar ejemplo adicional</td><td>Para añadir información adicional o excluir algo</td><td>Aparte de / Además de</td><td><i>Apart from football, he likes basketball.</i> (Aparte del fútbol, le gusta el baloncesto)</td></tr>
+
+                            <!-- Generalization -->
+                            <tr><td colspan="5"><b>🌐 Generalization (Para generalizar)</b></td></tr>
+                            <tr><td rowspan="2">Generalization</td><td>Mostly</td><td>Generalizar</td><td>Generalmente / Usualmente</td><td><i>Mostly, students enjoy breaks.</i> (Generalmente, los estudiantes disfrutan de los descansos)</td></tr>
+                            <tr><td>In general</td><td>Generalizar</td><td>En general</td><td><i>In general, people like music.</i> (En general, a la gente le gusta la música)</td></tr>
+
+                            <!-- Clarification -->
+                            <tr><td colspan="5"><b>💡 Clarification (Clarificativos)</b></td></tr>
+                            <tr><td rowspan="3">Clarification</td><td>That is to say</td><td>Clarificar idea</td><td>Es decir</td><td><i>He is a minor, that is to say, under 18.</i> (Es menor, es decir, menor de 18)</td></tr>
+                            <tr><td>In other words</td><td>Explicar de otra manera</td><td>En otras palabras</td><td><i>In other words, we need more time.</i> (En otras palabras, necesitamos más tiempo)</td></tr>
+                            <tr><td>i.e. (id est)</td><td>Clarificar idea</td><td>Es decir</td><td><i>i.e., it will rain tomorrow.</i> (Es decir, lloverá mañana)</td></tr>
+
+                            <!-- Emphasis -->
+                            <tr><td colspan="5"><b>💥 Emphasis (Enfatizar)</b></td></tr>
+                            <tr><td rowspan="3">Emphasis</td><td>As a matter of fact</td><td>Enfatizar hecho</td><td>Por cierto / De hecho</td><td><i>As a matter of fact, I like it.</i> (De hecho, me gusta)</td></tr>
+                            <tr><td>Definitely</td><td>Enfatizar certeza</td><td>En efecto / Definitivamente</td><td><i>Definitely, this is true.</i> (Definitivamente, esto es cierto)</td></tr>
+                            <tr><td>Obviously</td><td>Enfatizar obviedad</td><td>Obviamente</td><td><i>Obviously, you need rest.</i> (Obviamente, necesitas descansar)</td></tr>
+
+                            <!-- Concluding -->
+                            <tr><td colspan="5"><b>🏁 Concluding (Para concluir)</b></td></tr>
+                            <tr><td rowspan="4">Concluding</td><td>In conclusion</td><td>Finalizar idea</td><td>En conclusión</td><td><i>In conclusion, the project is successful.</i> (En conclusión, el proyecto es exitoso)</td></tr>
+                            <tr><td>To sum up</td><td>Resumir idea</td><td>En resumen</td><td><i>To sum up, we need action.</i> (En resumen, necesitamos acción)</td></tr>
+                            <tr><td>In short</td><td>Resumir idea</td><td>En resumen</td><td><i>In short, it's simple.</i> (En resumen, es simple)</td></tr>
+                            <tr><td>All in all</td><td>Resumir idea</td><td>En suma / Después de todo</td><td><i>All in all, it was worth it.</i> (En suma, valió la pena)</td></tr>
+
+                            <!-- Certainty -->
+                            <tr><td colspan="5"><b>✅ Certainty (Declarar certezas)</b></td></tr>
+                            <tr><td rowspan="4">Certainty</td><td>Obviously</td><td>Declarar certeza</td><td>Obviamente</td><td><i>Obviously, she passed the exam.</i> (Obviamente, aprobó el examen)</td></tr>
+                            <tr><td>Undoubtedly</td><td>Declarar certeza</td><td>Sin duda / Indudablemente</td><td><i>Undoubtedly, he is the best.</i> (Sin duda, es el mejor)</td></tr>
+                            <tr><td>Surely</td><td>Declarar certeza</td><td>Seguramente</td><td><i>Surely, they will arrive on time.</i> (Seguramente, llegarán a tiempo)</td></tr>
+                            <tr><td>Indeed</td><td>Declarar certeza</td><td>Verdaderamente / En realidad / En efecto</td><td><i>Indeed, that is correct.</i> (Verdaderamente, eso es correcto)</td></tr>
+                            <tr><td>Apparently</td><td>Declarar certeza</td><td>Para indicar que algo parece cierto según evidencia</td><td>Claramente / Es claro</td><td><i>Apparently, he left early.</i> (Claramente, se fue temprano)</td></tr>
+                            <tr><td>Possibly</td><td>Declarar posibilidad</td><td>Para indicar que algo podría ocurrir</td><td>Posiblemente</td><td><i>Possibly, she forgot.</i> (Posiblemente, se olvidó)</td></tr>
+
+                            <!-- Positive/Negative -->
+                            <tr><td colspan="5"><b>💚 / 💔 Positive & Negative (Positivos y negativos)</b></td></tr>
+                            <tr><td rowspan="4">Positive / Negative</td><td>Fortunately</td><td>Expresar hecho positivo</td><td>Afortunadamente</td><td><i>Fortunately, it didn't rain.</i> (Afortunadamente, no llovió)</td></tr>
+                            <tr><td>Unfortunately</td><td>Expresar hecho negativo</td><td>Desafortunadamente / Desgraciadamente</td><td><i>Unfortunately, he failed.</i> (Desafortunadamente, reprobó)</td></tr>
+                            <tr><td>Sadly</td><td>Expresar hecho negativo</td><td>Desgraciadamente / Tristemente</td><td><i>Sadly, she left early.</i> (Tristemente, se fue temprano)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <!-- UNIDAD 7: Conditionals -->
+        <div id="unit7" class="unit-container">
+            <div class="background">
+                <h1>🔀 Unit 7: Conditionals</h1>
+            </div>
+            
+            <div class="unit-content">
+                <h2>📘 Conditionals Reference Guide</h2>
+                
+                <div class="cond-block zero-border">
+                    <h3>0. Zero Conditional: Verdades Universales</h3>
+                    <p>Se usa para hechos científicos, leyes de la naturaleza o situaciones que siempre son verdaderas.</p>
+                    <div class="formula-box"><strong>Structure:</strong> If + Present Simple, Present Simple.</div>
+                    <ul>
+                        <li><b>Example:</b> If you heat ice, it melts. <span class="translation">(Si calientas hielo, se derrite).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block first-border">
+                    <h3>1. First Conditional: Posibilidades Reales</h3>
+                    <p>Se usa para situaciones futuras que son muy probables o posibles.</p>
+                    <div class="formula-box"><strong>Structure:</strong> If + Present Simple, Will + Verb (base form).</div>
+                    <ul>
+                        <li><b>Example:</b> If it rains tomorrow, I will stay at home. <span class="translation">(Si llueve mañana, me quedaré en casa).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>2. Second Conditional: Situaciones Imaginarias</h3>
+                    <p>Se usa para hablar de escenarios hipotéticos en el presente o futuro (poco probables o imposibles ahora).</p>
+                    <div class="formula-box"><strong>Structure:</strong> If + Past Simple, Would + Verb (base form).</div>
+                    <p class="note"><b>Note:</b> Con el verbo <i>to be</i>, se suele usar <b>were</b> para todas las personas (I, he, she, it).</p>
+                    <ul>
+                        <li><b>Example:</b> If I won the lottery, I would travel the world. <span class="translation">(Si ganara la lotería, viajaría por el mundo).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block third-border">
+                    <h3>3. Third Conditional: Arrepentimientos</h3>
+                    <p>Se refiere a situaciones que NO ocurrieron en el pasado. Es el condicional de los "hubiera".</p>
+                    <div class="formula-box"><strong>Structure:</strong> If + Past Perfect, Would have + Past Participle.</div>
+                    <ul>
+                        <li><b>Example:</b> If I had studied harder, I would have passed. <span class="translation">(Si hubiera estudiado más, habría pasado).</span></li>
+                    </ul>
+                </div>
+                
+                <div class="table-responsive">
+                    <table>
+                        <caption>Grammar Structures</caption>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>If Clause</th>
+                                <th>Result Clause</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Zero</strong></td>
+                                <td>Present Simple</td>
+                                <td>Present Simple</td>
+                            </tr>
+                            <tr>
+                                <td><strong>First</strong></td>
+                                <td>Present Simple</td>
+                                <td>Will + Verb</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Second</strong></td>
+                                <td>Past Simple</td>
+                                <td>Would + Verb</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Third</strong></td>
+                                <td>Past Perfect</td>
+                                <td>Would have + Past Part.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+
+                <div class="tip-box">
+                    <h3>⚠️ Important Tip: The Comma</h3>
+                    <ul>
+                        <li>If the <b>"If"</b> starts the sentence, use a comma: <i>If it rains<b>,</b> I'll stay.</i></li>
+                        <li>If <b>"If"</b> is in the middle, NO comma: <i>I'll stay if it rains.</i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIDAD 8: Modal verbs -->
+        <div id="unit8" class="unit-container">
+            <div class="background">
+                <h1>🔋 Unit 8: Modal verbs</h1>
+            </div>
+            
+            <div class="unit-content">
+                <h2>🔋 Complete Guide to Modal Verbs</h2>
+                <p>Los verbos modales son auxiliares que no cambian con la persona (I, you, he, etc.) y siempre van seguidos de un verbo en infinitivo sin "to" (excepto <i>ought to</i> y <i>have to</i>).</p>
+                
+                <div class="cond-block first-border">
+                    <h3>Habilidad y Permiso: CAN vs. COULD</h3>
+                    <p><b>CAN:</b> Habilidad en el presente o permiso informal.</p>
+                    <ul>
+                        <li><i>I <b>can</b> speak English.</i> <span class="translation">(Puedo hablar inglés).</span></li>
+                        <li><i><b>Can</b> I go to the bathroom?</i> <span class="translation">(¿Puedo ir al baño?).</span></li>
+                    </ul>
+                    <p><b>COULD:</b> Habilidad en el pasado o una petición más amable/formal.</p>
+                    <ul>
+                        <li><i>I <b>could</b> run fast when I was a child.</i> <span class="translation">(Podía correr rápido cuando era niño).</span></li>
+                        <li><i><b>Could</b> you open the window, please?</i> <span class="translation">(¿Podrías abrir la ventana, por favor?).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>Posibilidad: MAY vs. MIGHT</h3>
+                    <p><b>MAY:</b> Posibilidad probable (50%) o permiso muy formal.</p>
+                    <ul>
+                        <li><i>It <b>may</b> rain this afternoon.</i> <span class="translation">(Puede que llueva esta tarde).</span></li>
+                        <li><i><b>May</b> I come in, Professor?</i> <span class="translation">(¿Me permite entrar, profesor?).</span></li>
+                    </ul>
+                    <p><b>MIGHT:</b> Posibilidad remota o incierta (20-30%).</p>
+                    <ul>
+                        <li><i>If I save money, I <b>might</b> buy a car.</i> <span class="translation">(Si ahorro dinero, podría comprar un coche - poco probable).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block third-border">
+                    <h3>Consejo: SHOULD vs. OUGHT TO vs. SHALL</h3>
+                    <p><b>SHOULD:</b> El estándar para dar o pedir consejos.</p>
+                    <ul>
+                        <li><i>You <b>should</b> see a doctor.</i> <span class="translation">(Deberías ver a un médico).</span></li>
+                    </ul>
+                    <p><b>OUGHT TO:</b> Similar a <i>should</i>, pero indica un "deber moral" o algo lógico. Siempre lleva "to".</p>
+                    <ul>
+                        <li><i>We <b>ought to</b> help the poor.</i> <span class="translation">(Deberíamos ayudar a los pobres).</span></li>
+                    </ul>
+                    <p><b>SHALL:</b> Se usa para ofrecer ayuda o hacer sugerencias muy formales (principalmente con I/We).</p>
+                    <ul>
+                        <li><i><b>Shall</b> we dance?</i> <span class="translation">(¿Bailamos? / ¿Bailaremos?).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block first-border">
+                    <h3>Obligación: MUST vs. HAVE TO vs. NEED</h3>
+                    <p><b>MUST:</b> Obligación interna (sentido del deber) o prohibición (mustn't).</p>
+                    <ul>
+                        <li><i>I <b>must</b> study tonight.</i> <span class="translation">(Debo estudiar esta noche - decisión propia).</span></li>
+                        <li><i>You <b>mustn't</b> smoke here.</i> <span class="translation">(No debes/está prohibido fumar aquí).</span></li>
+                    </ul>
+                    <p><b>HAVE TO:</b> Obligación externa (leyes, reglas del trabajo).</p>
+                    <ul>
+                        <li><i>I <b>have to</b> wear a uniform.</i> <span class="translation">(Tengo que usar uniforme).</span></li>
+                    </ul>
+                    <p><b>NEED:</b> Indica necesidad o carencia de algo.</p>
+                    <ul>
+                        <li><i>I <b>need</b> to sleep.</i> <span class="translation">(Necesito dormir).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>Voluntad: WILL vs. WOULD</h3>
+                    <p><b>WILL:</b> Decisiones rápidas, promesas o futuro.</p>
+                    <ul>
+                        <li><i>I <b>will</b> help you with your bags.</i> <span class="translation">(Te ayudaré con tus maletas).</span></li>
+                    </ul>
+                    <p><b>WOULD:</b> Situaciones imaginarias o para ofrecer algo amablemente.</p>
+                    <ul>
+                        <li><i>I <b>would</b> travel if I had money.</i> <span class="translation">(Viajaría si tuviera dinero).</span></li>
+                        <li><i><b>Would</b> you like some coffee?</i> <span class="translation">(¿Le gustaría un café?).</span></li>
+                    </ul>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>Modal Verbs Quick Guide</caption>
+                        <thead>
+                            <tr>
+                                <th>Modal</th>
+                                <th>Meaning</th>
+                                <th>Formal?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Can / Will</td><td>Poder / Haré</td><td>Informal</td></tr>
+                            <tr><td>Could / Would</td><td>Podría / Haría</td><td>Neutral</td></tr>
+                            <tr><td>May / Shall</td><td>Podría / Sugerencia</td><td>Formal</td></tr>
+                            <tr><td>Must / Have to</td><td>Deber / Tener que</td><td>Neutral</td></tr>
+                            <tr><td>Should / Ought to</td><td>Debería</td><td>Neutral</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <!-- UNIDAD 9: Adverbs -->
+        <div id="unit9" class="unit-container">
+            <div class="background">
+                <h1>🚀 Unit 9: Adverbs</h1>
+            </div>
+            
+            <div class="unit-content">
+                <h2>🚀 Adverbs: Los Modificadores</h2>
+                <p>Los adverbios modifican verbos, adjetivos u otros adverbios. Nos dicen <b>cómo</b>, <b>cuándo</b>, <b>dónde</b> o <b>con qué frecuencia</b> ocurre algo.</p>
+
+                <div class="cond-block first-border">
+                    <h3>📌 Tipos de Adverbios</h3>
+                    
+                    <p><b>1. Adverbs of Manner (Modo):</b> Cómo ocurre la acción.</p>
+                    <div class="formula-box"><strong>Adjective + -ly = Adverb</strong></div>
+                    <ul>
+                        <li><i>Quick → quickly:</i> "She runs <b>quickly</b>." <span class="translation">(Ella corre <b>rápidamente</b>).</span></li>
+                        <li><i>Careful → carefully:</i> "Drive <b>carefully</b>." <span class="translation">(Maneja <b>con cuidado</b>).</span></li>
+                    </ul>
+                    <p class="note"><b>Excepciones:</b> Good → well, Fast → fast, Hard → hard.</p>
+
+                    <p><b>2. Adverbs of Time (Tiempo):</b> Cuándo ocurre.</p>
+                    <ul>
+                        <li><i>"I'll call you <b>tomorrow</b>."</i> <span class="translation">(Te llamaré <b>mañana</b>).</span></li>
+                        <li><i>"She arrived <b>yesterday</b>."</i> <span class="translation">(Ella llegó <b>ayer</b>).</span></li>
+                        <li><i>"We're leaving <b>now</b>."</i> <span class="translation">(Nos vamos <b>ahora</b>).</span></li>
+                    </ul>
+
+                    <p><b>3. Adverbs of Place (Lugar):</b> Dónde ocurre.</p>
+                    <ul>
+                        <li><i>"Please sit <b>here</b>."</i> <span class="translation">(Por favor siéntate <b>aquí</b>).</span></li>
+                        <li><i>"They went <b>outside</b>."</i> <span class="translation">(Ellos fueron <b>afuera</b>).</span></li>
+                        <li><i>"I looked <b>everywhere</b>."</i> <span class="translation">(Busqué <b>en todas partes</b>).</span></li>
+                    </ul>
+
+                    <p><b>4. Adverbs of Frequency (Frecuencia):</b> Con qué frecuencia.</p>
+                    <ul>
+                        <li><i>"I <b>always</b> drink coffee."</i> <span class="translation">(<b>Siempre</b> tomo café).</span></li>
+                        <li><i>"She <b>sometimes</b> visits us."</i> <span class="translation">(Ella <b>a veces</b> nos visita).</span></li>
+                        <li><i>"He <b>never</b> smokes."</i> <span class="translation">(Él <b>nunca</b> fuma).</span></li>
+                    </ul>
+
+                    <p><b>5. Adverbs of Degree (Grado/Intensidad):</b> Qué tan intenso.</p>
+                    <ul>
+                        <li><i>"I'm <b>very</b> tired."</i> <span class="translation">(Estoy <b>muy</b> cansado).</span></li>
+                        <li><i>"She's <b>extremely</b> intelligent."</i> <span class="translation">(Ella es <b>extremadamente</b> inteligente).</span></li>
+                        <li><i>"It's <b>too</b> hot."</i> <span class="translation">(Está <b>demasiado</b> caliente).</span></li>
+                    </ul>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>Complete Adverbs Guide</caption>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Adverb</th>
+                                <th>Meaning (Español)</th>
+                                <th>Example (English)</th>
+                                <th>Traducción (Español)</th>
+                                <th>Position</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Manner -->
+                            <tr><td colspan="6"><b>🎭 Manner (Modo)</b></td></tr>
+                            <tr><td rowspan="5">Manner</td><td>Quickly</td><td>Rápidamente</td><td>She runs quickly.</td><td>Ella corre rápidamente.</td><td>Después del verbo</td></tr>
+                            <tr><td>Carefully</td><td>Cuidadosamente</td><td>Drive carefully.</td><td>Maneja con cuidado.</td><td>Después del verbo</td></tr>
+                            <tr><td>Well</td><td>Bien</td><td>He sings well.</td><td>Él canta bien.</td><td>Después del verbo</td></tr>
+                            <tr><td>Fast</td><td>Rápido</td><td>He runs fast.</td><td>Él corre rápido.</td><td>Después del verbo</td></tr>
+                            <tr><td>Hard</td><td>Duro / Con esfuerzo</td><td>She works hard.</td><td>Ella trabaja duro.</td><td>Después del verbo</td></tr>
+
+                            <!-- Time -->
+                            <tr><td colspan="6"><b>⏰ Time (Tiempo)</b></td></tr>
+                            <tr><td rowspan="6">Time</td><td>Now</td><td>Ahora</td><td>I need it now.</td><td>Lo necesito ahora.</td><td>Final / Principio</td></tr>
+                            <tr><td>Then</td><td>Entonces / Luego</td><td>We ate, then left.</td><td>Comimos, luego nos fuimos.</td><td>Final / Principio</td></tr>
+                            <tr><td>Today</td><td>Hoy</td><td>I'll do it today.</td><td>Lo haré hoy.</td><td>Final / Principio</td></tr>
+                            <tr><td>Yesterday</td><td>Ayer</td><td>She arrived yesterday.</td><td>Ella llegó ayer.</td><td>Final / Principio</td></tr>
+                            <tr><td>Tomorrow</td><td>Mañana</td><td>See you tomorrow.</td><td>Te veo mañana.</td><td>Final / Principio</td></tr>
+                            <tr><td>Already</td><td>Ya</td><td>I already ate.</td><td>Ya comí.</td><td>Medio (verbo auxiliar + already)</td></tr>
+
+                            <!-- Place -->
+                            <tr><td colspan="6"><b>📍 Place (Lugar)</b></td></tr>
+                            <tr><td rowspan="5">Place</td><td>Here</td><td>Aquí</td><td>Come here.</td><td>Ven aquí.</td><td>Después del verbo</td></tr>
+                            <tr><td>There</td><td>Allí / Ahí</td><td>Put it there.</td><td>Ponlo allí.</td><td>Después del verbo</td></tr>
+                            <tr><td>Outside</td><td>Afuera</td><td>Go outside.</td><td>Ve afuera.</td><td>Después del verbo</td></tr>
+                            <tr><td>Inside</td><td>Adentro</td><td>Stay inside.</td><td>Quédate adentro.</td><td>Después del verbo</td></tr>
+                            <tr><td>Everywhere</td><td>En todas partes</td><td>I looked everywhere.</td><td>Busqué en todas partes.</td><td>Después del verbo</td></tr>
+
+                            <!-- Frequency -->
+                            <tr><td colspan="6"><b>🔄 Frequency (Frecuencia)</b></td></tr>
+                            <tr><td rowspan="7">Frequency</td><td>Always</td><td>Siempre</td><td>I always smile.</td><td>Siempre sonrío.</td><td>Antes del verbo principal</td></tr>
+                            <tr><td>Usually</td><td>Usualmente</td><td>She usually walks.</td><td>Usualmente camina.</td><td>Antes del verbo principal</td></tr>
+                            <tr><td>Often</td><td>A menudo</td><td>We often travel.</td><td>A menudo viajamos.</td><td>Antes del verbo principal</td></tr>
+                            <tr><td>Sometimes</td><td>A veces</td><td>He sometimes calls.</td><td>A veces llama.</td><td>Principio / Medio</td></tr>
+                            <tr><td>Rarely</td><td>Raramente</td><td>I rarely drink.</td><td>Raramente bebo.</td><td>Antes del verbo principal</td></tr>
+                            <tr><td>Never</td><td>Nunca</td><td>I never lie.</td><td>Nunca miento.</td><td>Antes del verbo principal</td></tr>
+                            <tr><td>Every day</td><td>Todos los días</td><td>I exercise every day.</td><td>Ejercito todos los días.</td><td>Final</td></tr>
+
+                            <!-- Degree -->
+                            <tr><td colspan="6"><b>📊 Degree (Grado)</b></td></tr>
+                            <tr><td rowspan="6">Degree</td><td>Very</td><td>Muy</td><td>It's very cold.</td><td>Está muy frío.</td><td>Antes del adjetivo/adverbio</td></tr>
+                            <tr><td>Too</td><td>Demasiado</td><td>It's too hot.</td><td>Está demasiado caliente.</td><td>Antes del adjetivo/adverbio</td></tr>
+                            <tr><td>Enough</td><td>Suficientemente</td><td>It's big enough.</td><td>Es suficientemente grande.</td><td>Después del adjetivo/adverbio</td></tr>
+                            <tr><td>Almost</td><td>Casi</td><td>I'm almost done.</td><td>Casi termino.</td><td>Antes del verbo/adjetivo</td></tr>
+                            <tr><td>Really</td><td>Realmente</td><td>She's really nice.</td><td>Ella es realmente amable.</td><td>Antes del adjetivo/adverbio</td></tr>
+                            <tr><td>Quite</td><td>Bastante</td><td>It's quite good.</td><td>Es bastante bueno.</td><td>Antes del adjetivo/adverbio</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>📊 Escala de Frecuencia</h3>
+                    
+                    <div class="frequency-scale">
+                        <span class="frequency-item">Always (100%)</span>
+                        <span class="frequency-item">Usually</span>
+                        <span class="frequency-item">Often</span>
+                        <span class="frequency-item">Sometimes (50%)</span>
+                        <span class="frequency-item">Rarely</span>
+                        <span class="frequency-item">Never (0%)</span>
+                    </div>
+                    
+                    <ul>
+                        <li><b>Always:</b> Siempre (100% del tiempo)</li>
+                        <li><b>Usually:</b> Usualmente (80-90%)</li>
+                        <li><b>Often:</b> A menudo (60-70%)</li>
+                        <li><b>Sometimes:</b> A veces (40-50%)</li>
+                        <li><b>Rarely / Seldom:</b> Raramente (10-20%)</li>
+                        <li><b>Never:</b> Nunca (0%)</li>
+                    </ul>
+                </div>
+
+                <div class="cond-block third-border">
+                    <h3>⚠️ Posición de los Adverbios</h3>
+                    
+                    <p><b>1. Al principio de la oración:</b> Para enfatizar (tiempo, opinión).</p>
+                    <ul>
+                        <li><i><b>Yesterday</b>, I went to the cinema.</i> <span class="translation">(<b>Ayer</b> fui al cine).</span></li>
+                        <li><i><b>Unfortunately</b>, he failed.</i> <span class="translation">(<b>Desafortunadamente</b>, él reprobó).</span></li>
+                    </ul>
+
+                    <p><b>2. En medio (antes del verbo principal):</b> Frecuencia y grado.</p>
+                    <ul>
+                        <li><i>She <b>always</b> arrives early.</i> <span class="translation">(Ella <b>siempre</b> llega temprano).</span></li>
+                        <li><i>I <b>really</b> like it.</i> <span class="translation">(<b>Realmente</b> me gusta).</span></li>
+                    </ul>
+                    <p class="note"><b>Con verbos auxiliares:</b> I have <b>never</b> been there. / She can <b>always</b> help.</p>
+
+                    <p><b>3. Al final:</b> Modo, lugar, tiempo (los más comunes).</p>
+                    <ul>
+                        <li><i>He speaks English <b>well</b>.</i> <span class="translation">(Él habla inglés <b>bien</b>).</span></li>
+                        <li><i>I'll meet you <b>there tomorrow</b>.</i> <span class="translation">(Te veré <b>allí mañana</b>).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block first-border">
+                    <h3>🎯 Comparativos y Superlativos de Adverbios</h3>
+                    
+                    <p><b>Adverbios cortos (-ly):</b> more / most</p>
+                    <ul>
+                        <li><i>She runs <b>more quickly</b> than him.</i> <span class="translation">(Ella corre <b>más rápidamente</b> que él).</span></li>
+                        <li><i>He works <b>the most carefully</b>.</i> <span class="translation">(Él trabaja <b>con más cuidado</b>).</span></li>
+                    </ul>
+
+                    <p><b>Adverbios irregulares:</b></p>
+                    <ul>
+                        <li><b>Well → better → best:</b> <i>She sings <b>better</b> than me.</i> <span class="translation">(Ella canta <b>mejor</b> que yo).</span></li>
+                        <li><b>Badly → worse → worst:</b> <i>He did <b>worse</b> on the test.</i> <span class="translation">(Él lo hizo <b>peor</b> en el examen).</span></li>
+                        <li><b>Much → more → most:</b> <i>I sleep <b>more</b> now.</i> <span class="translation">(Duermo <b>más</b> ahora).</span></li>
+                        <li><b>Little → less → least:</b> <i>She eats <b>less</b> than before.</i> <span class="translation">(Ella come <b>menos</b> que antes).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>⚡ Adverbios vs Adjetivos</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Adjective (modifica sustantivo)</th>
+                                    <th>Adverb (modifica verbo/adjetivo)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i>She is a <b>careful</b> driver.</i> (Ella es una conductora <b>cuidadosa</b>)</td>
+                                    <td><i>She drives <b>carefully</b>.</i> (Ella conduce <b>cuidadosamente</b>)</td>
+                                </tr>
+                                <tr>
+                                    <td><i>He is a <b>fast</b> runner.</i> (Él es un corredor <b>rápido</b>)</td>
+                                    <td><i>He runs <b>fast</b>.</i> (Él corre <b>rápido</b>)</td>
+                                </tr>
+                                <tr>
+                                    <td><i>It's a <b>hard</b> test.</i> (Es un examen <b>difícil</b>)</td>
+                                    <td><i>He works <b>hard</b>.</i> (Él trabaja <b>duro</b>)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <p class="note"><b>Tip:</b> Después de verbos como <i>be, seem, look, feel, sound, taste, smell</i> usamos adjetivos, no adverbios: <i>She looks <b>beautiful</b></i> (NO beautifully).</p>
+                </div>
+
+                <p class="note"><b>Grammar Hack:</b> La mayoría de adverbios de modo se forman añadiendo <b>-ly</b> al adjetivo. Pero cuidado: <i>friendly</i> es adjetivo, no adverbio (el adverbio sería <i>in a friendly way</i>).</p>
+                <br>
+            </div>
+        </div>
+
+        <!-- UNIDAD 10: Phrasal verbs -->
+        <div id="unit10" class="unit-container">
+            <div class="background">
+                <h1>🔌 Unit 10: Phrasal verbs</h1>
+            </div>
+            
+            <div class="unit-content">
+                <h2>🔌 Essential Phrasal Verbs (Native Selection)</h2>
+                <p>Un <b>Phrasal Verb</b> es la combinación de un verbo y una partícula (preposición o adverbio). Para un nativo, es mucho más natural decir "Find out" que "Discover".</p>
+
+                <div class="cond-block first-border">
+                    <h3>1. Daily Routine (Rutina Diaria)</h3>
+                    <ul>
+                        <li><b>Wake up:</b> Despertarse. <br> <i>"I <b>wake up</b> at 7 AM."</i> <span class="translation">(Me despierto a las 7 AM).</span></li>
+                        <li><b>Get up:</b> Levantarse de la cama. <br> <i>"I <b>get up</b> as soon as the alarm rings."</i> <span class="translation">(Me levanto en cuanto suena la alarma).</span></li>
+                        <li><b>Go out:</b> Salir (socialmente). <br> <i>"We should <b>go out</b> for dinner."</i> <span class="translation">(Deberíamos salir a cenar).</span></li>
+                        <li><b>Clean up:</b> Limpiar/Asear. <br> <i>"You need to <b>clean up</b> your room."</i> <span class="translation">(Necesitas limpiar tu cuarto).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>2. Common Native Expressions (USA)</h3>
+                    <ul>
+                        <li><b>Hang out:</b> Pasar el rato. <br> <i>"Do you want to <b>hang out</b> at the mall?"</i> <span class="translation">(¿Quieres pasar el rato en el centro comercial?).</span></li>
+                        <li><b>Check out:</b> Mirar algo/Verificar. <br> <i>"<b>Check out</b> this new app!"</i> <span class="translation">(¡Mira/Prueba esta nueva app!).</span></li>
+                        <li><b>Figure out:</b> Comprender o resolver algo. <br> <i>"I can't <b>figure out</b> this math problem."</i> <span class="translation">(No logro resolver/entender este problema de mate).</span></li>
+                        <li><b>Show up:</b> Aparecer/Llegar. <br> <i>"He didn't <b>show up</b> to the meeting."</i> <span class="translation">(Él no llegó/apareció a la reunión).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block third-border">
+                    <h3>3. Technology & Logistics</h3>
+                    <ul>
+                        <li><b>Turn on / off:</b> Encender / Apagar. <br> <i>"<b>Turn off</b> the lights before leaving."</i> <span class="translation">(Apaga las luces antes de irte).</span></li>
+                        <li><b>Pick up:</b> Recoger (algo o a alguien). <br> <i>"I'll <b>pick</b> you <b>up</b> at 8."</i> <span class="translation">(Te recogeré a las 8).</span></li>
+                        <li><b>Drop off:</b> Dejar (en un lugar). <br> <i>"Can you <b>drop</b> me <b>off</b> at the station?"</i> <span class="translation">(¿Puedes dejarme en la estación?).</span></li>
+                        <li><b>Back up:</b> Respaldar información. <br> <i>"Don't forget to <b>back up</b> your files."</i> <span class="translation">(No olvides respaldar tus archivos).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block first-border">
+                    <h3>4. Social, Work & Problems</h3>
+                    <ul>
+                        <li><b>Give up:</b> Rendirse / Dejar de hacer algo. <br> <i>"Never <b>give up</b> on your goals."</i> <span class="translation">(Nunca te rindas con tus metas).</span></li>
+                        <li><b>Find out:</b> Descubrir / Enterarse. <br> <i>"I <b>found out</b> that she is moving."</i> <span class="translation">(Me enteré de que ella se muda).</span></li>
+                        <li><b>Run out of:</b> Quedarse sin algo. <br> <i>"We <b>ran out of</b> coffee."</i> <span class="translation">(Nos quedamos sin café).</span></li>
+                        <li><b>Work out:</b> Hacer ejercicio o "funcionar/resolverse". <br> <i>"I hope everything <b>works out</b>."</i> <span class="translation">(Espero que todo se resuelva/salga bien).</span></li>
+                    </ul>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>Essential Phrasal Verbs Cheat Sheet</caption>
+                        <thead>
+                            <tr>
+                                <th>Phrasal Verb</th>
+                                <th>Common Meaning</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Look for</strong></td><td>Buscar</td><td>Inseparable</td></tr>
+                            <tr><td><strong>Take off</strong></td><td>Quitarse ropa / Despegar</td><td>Separable</td></tr>
+                            <tr><td><strong>Call off</strong></td><td>Cancelar</td><td>Separable</td></tr>
+                            <tr><td><strong>Get along</strong></td><td>Llevarse bien</td><td>Inseparable</td></tr>
+                            <tr><td><strong>Hold on</strong></td><td>Esperar</td><td>Inseparable</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="note"><b>Note:</b> Recuerda que algunos son <b>separables</b> (<i>Pick <b>me</b> up</i>) y otros <b>inseparables</b> (<i>Look after <b>the baby</b></i>). ¡Fíjate siempre dónde va el objeto!</p>
+            </div>
+        </div>
+
+        <!-- UNIDAD 11: Comparative & Superlative -->
+        <div id="unit11" class="unit-container">
+            <div class="background">
+                <h1>📊 Unit 11: Comparative & Superlative</h1>
+            </div>
+            
+            <div class="unit-content">
+                <h2>📊 Comparative & Superlative: Comparativos y Superlativos</h2>
+                <p>Los comparativos y superlativos se usan para comparar personas, cosas o grupos. Los <b>comparativos</b> comparan DOS elementos, mientras que los <b>superlativos</b> comparan TRES O MÁS destacando a uno sobre todos.</p>
+
+                <div class="cond-block first-border">
+                    <h3>📌 Regla General: 3 Categorías</h3>
+                    
+                    <div class="category-grid">
+                        <div class="category-card green">
+                            <div class="category-icon">📏</div>
+                            <div class="category-title">Adjetivos Cortos</div>
+                            <div class="category-description">1 sílaba<br>Algunos de 2</div>
+                        </div>
+                        
+                        <div class="category-card yellow">
+                            <div class="category-icon">📐</div>
+                            <div class="category-title">Adjetivos Largos</div>
+                            <div class="category-description">3+ sílabas<br>Muchos de 2</div>
+                        </div>
+                        
+                        <div class="category-card red">
+                            <div class="category-icon">⚠️</div>
+                            <div class="category-title">Irregulares</div>
+                            <div class="category-description">Cambian completamente</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>Complete Comparative & Superlative Guide</caption>
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Adjective</th>
+                                <th>Comparative</th>
+                                <th>Superlative</th>
+                                <th>Regla</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Cortos -->
+                            <tr><td colspan="5"><b>📏 Adjetivos Cortos (1 sílaba o 2 terminados en -y, -er, -ow, -le)</b></td></tr>
+                            <tr>
+                                <td rowspan="7">Cortos</td>
+                                <td>Tall (alto)</td>
+                                <td><b>Taller</b> (más alto)</td>
+                                <td><b>The tallest</b> (el más alto)</td>
+                                <td rowspan="3">Añadir -er / -est</td>
+                            </tr>
+                            <tr><td>Small (pequeño)</td><td><b>Smaller</b></td><td><b>The smallest</b></td></tr>
+                            <tr><td>Fast (rápido)</td><td><b>Faster</b></td><td><b>The fastest</b></td></tr>
+                            <tr>
+                                <td>Big (grande)</td>
+                                <td><b>Bigger</b> (doble consonante)</td>
+                                <td><b>The biggest</b></td>
+                                <td>CVC → doble consonante</td>
+                            </tr>
+                            <tr>
+                                <td>Nice (agradable)</td>
+                                <td><b>Nicer</b> (solo añadir -r)</td>
+                                <td><b>The nicest</b></td>
+                                <td>Termina en -e → solo -r/-st</td>
+                            </tr>
+                            <tr>
+                                <td>Happy (feliz)</td>
+                                <td><b>Happier</b> (y → i)</td>
+                                <td><b>The happiest</b></td>
+                                <td>Termina en -y → -ier / -iest</td>
+                            </tr>
+                            <tr>
+                                <td>Clever (inteligente)</td>
+                                <td><b>Cleverer / more clever</b></td>
+                                <td><b>The cleverest / most clever</b></td>
+                                <td>2 sílabas, ambas formas posibles</td>
+                            </tr>
+
+                            <!-- Largos -->
+                            <tr><td colspan="5"><b>📐 Adjetivos Largos (2 o más sílabas, excepto -y)</b></td></tr>
+                            <tr>
+                                <td rowspan="4">Largos</td>
+                                <td>Beautiful (hermoso)</td>
+                                <td><b>More beautiful</b></td>
+                                <td><b>The most beautiful</b></td>
+                                <td rowspan="4">more / most + adjetivo</td>
+                            </tr>
+                            <tr><td>Expensive (caro)</td><td><b>More expensive</b></td><td><b>The most expensive</b></td></tr>
+                            <tr><td>Interesting (interesante)</td><td><b>More interesting</b></td><td><b>The most interesting</b></td></tr>
+                            <tr><td>Comfortable (cómodo)</td><td><b>More comfortable</b></td><td><b>The most comfortable</b></td></tr>
+
+                            <!-- Irregulares -->
+                            <tr><td colspan="5"><b>⚠️ Irregulares (cambian completamente)</b></td></tr>
+                            <tr>
+                                <td rowspan="5">Irregulares</td>
+                                <td>Good (bueno)</td>
+                                <td><b>Better</b> (mejor)</td>
+                                <td><b>The best</b> (el mejor)</td>
+                                <td rowspan="5">¡Memorizar!</td>
+                            </tr>
+                            <tr><td>Bad (malo)</td><td><b>Worse</b> (peor)</td><td><b>The worst</b> (el peor)</td></tr>
+                            <tr><td>Far (lejano)</td><td><b>Farther / Further</b>*</td><td><b>The farthest / furthest</b></td></tr>
+                            <tr><td>Little (poco)</td><td><b>Less</b> (menos)</td><td><b>The least</b> (el mínimo)</td></tr>
+                            <tr><td>Much/Many (mucho)</td><td><b>More</b> (más)</td><td><b>The most</b> (el máximo)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>📏 Comparativo: Comparando DOS elementos</h3>
+                    
+                    <div class="formula-box"><strong>Adjetivo Corto: adjective + -er + than</strong></div>
+                    <div class="formula-box"><strong>Adjetivo Largo: more + adjective + than</strong></div>
+
+                    <p><b>Ejemplos con adjetivos cortos:</b></p>
+                    <ul>
+                        <li><i>"John is <b>taller than</b> Mary."</i> <span class="translation">(John es <b>más alto que</b> Mary).</span></li>
+                        <li><i>"My car is <b>faster than</b> yours."</i> <span class="translation">(Mi auto es <b>más rápido que</b> el tuyo).</span></li>
+                        <li><i>"This book is <b>cheaper than</b> that one."</i> <span class="translation">(Este libro es <b>más barato que</b> ese).</span></li>
+                    </ul>
+
+                    <p><b>Ejemplos con adjetivos largos:</b></p>
+                    <ul>
+                        <li><i>"This painting is <b>more beautiful than</b> the other."</i> <span class="translation">(Esta pintura es <b>más hermosa que</b> la otra).</span></li>
+                        <li><i>"Spanish is <b>more difficult than</b> English."</i> <span class="translation">(El español es <b>más difícil que</b> el inglés).</span></li>
+                    </ul>
+
+                    <p><b>Comparativos de igualdad:</b></p>
+                    <div class="formula-box"><strong>as + adjective + as</strong></div>
+                    <ul>
+                        <li><i>"She is <b>as tall as</b> her brother."</i> <span class="translation">(Ella es <b>tan alta como</b> su hermano).</span></li>
+                        <li><i>"This book is <b>as interesting as</b> that one."</i> <span class="translation">(Este libro es <b>tan interesante como</b> ese).</span></li>
+                        <li><i>"He is <b>not as</b> smart <b>as</b> his sister."</i> <span class="translation">(Él <b>no es tan</b> inteligente <b>como</b> su hermana).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block third-border">
+                    <h3>🥇 Superlativo: Destacando UNO entre TRES O MÁS</h3>
+                    
+                    <div class="formula-box"><strong>Adjetivo Corto: the + adjective + -est</strong></div>
+                    <div class="formula-box"><strong>Adjetivo Largo: the most + adjective</strong></div>
+
+                    <p><b>Ejemplos con adjetivos cortos:</b></p>
+                    <ul>
+                        <li><i>"Mount Everest is <b>the tallest</b> mountain."</i> <span class="translation">(El Everest es <b>la más alta</b> montaña).</span></li>
+                        <li><i>"She is <b>the youngest</b> in the class."</i> <span class="translation">(Ella es <b>la más joven</b> de la clase).</span></li>
+                        <li><i>"This is <b>the biggest</b> pizza I've ever seen."</i> <span class="translation">(Esta es <b>la más grande</b> pizza que he visto).</span></li>
+                    </ul>
+
+                    <p><b>Ejemplos con adjetivos largos:</b></p>
+                    <ul>
+                        <li><i>"This is <b>the most expensive</b> hotel."</i> <span class="translation">(Este es <b>el más caro</b> hotel).</span></li>
+                        <li><i>"She is <b>the most intelligent</b> person I know."</i> <span class="translation">(Ella es <b>la persona más inteligente</b> que conozco).</span></li>
+                    </ul>
+
+                    <p><b>Superlativos irregulares:</b></p>
+                    <ul>
+                        <li><i>"This is <b>the best</b> day of my life."</i> <span class="translation">(Este es <b>el mejor</b> día de mi vida).</span></li>
+                        <li><i>"That was <b>the worst</b> movie ever."</i> <span class="translation">(Esa fue <b>la peor</b> película).</span></li>
+                    </ul>
+
+                    <p class="note"><b>Preposiciones con superlativos:</b> Usamos <b>in</b> con lugares/grupos y <b>of</b> con períodos de tiempo.<br>
+                    <i>"The tallest <b>in</b> the class."</i> / <i>"The happiest day <b>of</b> my life."</i></p>
+                </div>
+
+                <div class="cond-block first-border">
+                    <h3>🔍 Comparativos y Superlativos Especiales</h3>
+                    
+                    <p><b>1. Comparativos con "less" (menos):</b></p>
+                    <div class="formula-box"><strong>less + adjective + than</strong></div>
+                    <ul>
+                        <li><i>"This car is <b>less expensive than</b> that one."</i> <span class="translation">(Este auto es <b>menos caro que</b> ese).</span></li>
+                        <li><i>"He is <b>less tall than</b> his brother."</i> <span class="translation">(Él es <b>menos alto que</b> su hermano).</span></li>
+                    </ul>
+
+                    <p><b>2. Superlativos con "the least" (el/la menos):</b></p>
+                    <div class="formula-box"><strong>the least + adjective</strong></div>
+                    <ul>
+                        <li><i>"This is <b>the least expensive</b> option."</i> <span class="translation">(Esta es <b>la opción menos cara</b>).</span></li>
+                        <li><i>"She is <b>the least interested</b> in the topic."</i> <span class="translation">(Ella es <b>la menos interesada</b> en el tema).</span></li>
+                    </ul>
+
+                    <p><b>3. Comparativos con "more and more" (cada vez más):</b></p>
+                    <ul>
+                        <li><i>"Life is getting <b>more and more expensive</b>."</i> <span class="translation">(La vida está <b>cada vez más cara</b>).</span></li>
+                        <li><i>"She became <b>more and more beautiful</b>."</i> <span class="translation">(Ella se volvía <b>cada vez más hermosa</b>).</span></li>
+                    </ul>
+
+                    <p><b>4. Comparativos con "the... the..." (cuanto más... más...):</b></p>
+                    <div class="formula-box"><strong>The + comparative, the + comparative</strong></div>
+                    <ul>
+                        <li><i>"<b>The more</b> you study, <b>the more</b> you learn."</i> <span class="translation">(<b>Cuanto más</b> estudias, <b>más</b> aprendes).</span></li>
+                        <li><i>"<b>The older</b> I get, <b>the happier</b> I am."</i> <span class="translation">(<b>Cuanto más mayor</b> me hago, <b>más feliz</b> soy).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>📊 Tabla de Errores Comunes</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Incorrecto ❌</th>
+                                    <th>Correcto ✅</th>
+                                    <th>Explicación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i>She is <b>more tall</b> than me.</i></td>
+                                    <td><i>She is <b>taller than</b> me.</i></td>
+                                    <td>"Tall" es corto → taller, no more tall</td>
+                                </tr>
+                                <tr>
+                                    <td><i>This is <b>the most big</b> house.</i></td>
+                                    <td><i>This is <b>the biggest</b> house.</i></td>
+                                    <td>"Big" es corto → biggest, no most big</td>
+                                </tr>
+                                <tr>
+                                    <td><i>He is <b>more richer</b> than her.</i></td>
+                                    <td><i>He is <b>richer than</b> her.</i></td>
+                                    <td>Doble comparativo - usar solo uno</td>
+                                </tr>
+                                <tr>
+                                    <td><i>This is <b>the most best</b>.</i></td>
+                                    <td><i>This is <b>the best</b>.</i></td>
+                                    <td>"Best" ya es superlativo</td>
+                                </tr>
+                                <tr>
+                                    <td><i>She is <b>more pretty</b>.</i></td>
+                                    <td><i>She is <b>prettier</b>.</i></td>
+                                    <td>"Pretty" termina en -y → prettier</td>
+                                </tr>
+                                <tr>
+                                    <td><i>He is <b>as tall than</b> me.</i></td>
+                                    <td><i>He is <b>as tall as</b> me.</i></td>
+                                    <td>Igualdad es as + adj + as</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="cond-block third-border">
+                    <h3>🎯 Comparativos con Sustantivos y Verbos</h3>
+                    
+                    <p><b>Con sustantivos (más/menos cosas):</b></p>
+                    <div class="formula-box"><strong>more / fewer (contables) + noun + than</strong></div>
+                    <div class="formula-box"><strong>more / less (incontables) + noun + than</strong></div>
+                    <ul>
+                        <li><i>"I have <b>more books than</b> you."</i> <span class="translation">(Tengo <b>más libros que</b> tú).</span></li>
+                        <li><i>"She has <b>fewer friends than</b> me."</i> <span class="translation">(Ella tiene <b>menos amigos que</b> yo).</span></li>
+                        <li><i>"We have <b>less time than</b> we need."</i> <span class="translation">(Tenemos <b>menos tiempo del que</b> necesitamos).</span></li>
+                    </ul>
+
+                    <p><b>Con verbos (hacer algo más/menos):</b></p>
+                    <div class="formula-box"><strong>verb + more / less + than</strong></div>
+                    <ul>
+                        <li><i>"She works <b>more than</b> he does."</i> <span class="translation">(Ella trabaja <b>más que</b> él).</span></li>
+                        <li><i>"I sleep <b>less than</b> I should."</i> <span class="translation">(Duermo <b>menos de lo que</b> debería).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block first-border">
+                    <h3>📝 Ejemplos Prácticos para cada Caso</h3>
+                    
+                    <p><b>Adjetivos cortos (1 sílaba):</b></p>
+                    <ul>
+                        <li><i>Small → smaller → the smallest</i></li>
+                        <li><i>Young → younger → the youngest</i></li>
+                        <li><i>Old → older/elder* → the oldest/eldest*</i></li>
+                        <li class="note"><b>*Elder/eldest:</b> solo para familia: <i>my elder brother</i> (mi hermano mayor).</li>
+                    </ul>
+
+                    <p><b>Adjetivos de 2 sílabas terminados en -y:</b></p>
+                    <ul>
+                        <li><i>Happy → happier → the happiest</i></li>
+                        <li><i>Funny → funnier → the funniest</i></li>
+                        <li><i>Easy → easier → the easiest</i></li>
+                    </ul>
+
+                    <p><b>Adjetivos de 2 sílabas que NO terminan en -y:</b> (ambas formas posibles)</p>
+                    <ul>
+                        <li><i>Polite → politer / more polite → the politest / most polite</i></li>
+                        <li><i>Quiet → quieter / more quiet → the quietest / most quiet</i></li>
+                        <li><i>Simple → simpler / more simple → the simplest / most simple</i></li>
+                    </ul>
+
+                    <p><b>Adjetivos largos (3+ sílabas):</b></p>
+                    <ul>
+                        <li><i>Dangerous → more dangerous → the most dangerous</i></li>
+                        <li><i>Intelligent → more intelligent → the most intelligent</i></li>
+                        <li><i>Wonderful → more wonderful → the most wonderful</i></li>
+                    </ul>
+                </div>
+
+                <p class="note"><b>Grammar Hack:</b> ¿No sabes si usar -er/-est o more/most? Los adjetivos de UNA sílaba SIEMPRE llevan -er/-est. Los de TRES o más SIEMPRE llevan more/most. Los de DOS sílabas son la zona gris: si terminan en -y, -er, -ow, -le, suelen llevar -er/-est. ¡En caso de duda, busca en el diccionario!</p>
+                <br>
+            </div>
+        </div>
+
+        <!-- UNIDAD 12: Passive Voice -->
+        <div id="unit12" class="unit-container">
+            <div class="background">
+                <h1>🔄 Unit 12: Passive Voice</h1>
+            </div>
+            
+            <div class="unit-content">
+                <h2>🔄 Passive Voice: La Voz Pasiva</h2>
+                <p>La voz pasiva se usa cuando el <b>objeto</b> de la acción es más importante que quien realiza la acción (el sujeto agente). En español sería "ser + participio" (fue hecho, es conocido).</p>
+
+                <div class="cond-block first-border">
+                    <h3>📌 Estructura General</h3>
+                    <div class="formula-box"><strong>Subject + TO BE (conjugado) + Past Participle + (by + agent)</strong></div>
+                    <ul>
+                        <li><i>"The cake <b>was eaten</b> (by the dog)."</i> <span class="translation">(La torta <b>fue comida</b> por el perro).</span></li>
+                        <li><i>"English <b>is spoken</b> all over the world."</i> <span class="translation">(El inglés <b>es hablado</b> en todo el mundo).</span></li>
+                    </ul>
+                    <p class="note"><b>Note:</b> El agente (by + persona) solo se menciona si es importante. Si no, se omite.</p>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>Passive Voice Across Tenses</caption>
+                        <thead>
+                            <tr>
+                                <th>Tense</th>
+                                <th>Active Voice</th>
+                                <th>Passive Voice</th>
+                                <th>Ejemplo (Passive)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Present Simple</b></td>
+                                <td>Someone cleans the room.</td>
+                                <td><b>am/is/are + cleaned</b></td>
+                                <td>The room <b>is cleaned</b> every day.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Present Continuous</b></td>
+                                <td>Someone is cleaning the room.</td>
+                                <td><b>am/is/are + being + cleaned</b></td>
+                                <td>The room <b>is being cleaned</b> now.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Present Perfect</b></td>
+                                <td>Someone has cleaned the room.</td>
+                                <td><b>has/have + been + cleaned</b></td>
+                                <td>The room <b>has been cleaned</b> already.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Past Simple</b></td>
+                                <td>Someone cleaned the room.</td>
+                                <td><b>was/were + cleaned</b></td>
+                                <td>The room <b>was cleaned</b> yesterday.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Past Continuous</b></td>
+                                <td>Someone was cleaning the room.</td>
+                                <td><b>was/were + being + cleaned</b></td>
+                                <td>The room <b>was being cleaned</b> at 5 PM.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Past Perfect</b></td>
+                                <td>Someone had cleaned the room.</td>
+                                <td><b>had + been + cleaned</b></td>
+                                <td>The room <b>had been cleaned</b> before I arrived.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Future Simple</b></td>
+                                <td>Someone will clean the room.</td>
+                                <td><b>will + be + cleaned</b></td>
+                                <td>The room <b>will be cleaned</b> tomorrow.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Future Perfect</b></td>
+                                <td>Someone will have cleaned the room.</td>
+                                <td><b>will + have + been + cleaned</b></td>
+                                <td>The room <b>will have been cleaned</b> by 6 PM.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Modals (Can, Must, etc.)</b></td>
+                                <td>Someone must clean the room.</td>
+                                <td><b>modal + be + cleaned</b></td>
+                                <td>The room <b>must be cleaned</b> immediately.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>🔍 ¿Cuándo usamos la voz pasiva?</h3>
+                    <ul>
+                        <li><b>Cuando el agente es desconocido:</b> <i>"My bike <b>was stolen</b>."</i> <span class="translation">(Mi bici <b>fue robada</b> - no sé quién).</span></li>
+                        <li><b>Cuando el agente es obvio:</b> <i>"He <b>was arrested</b>."</i> <span class="translation">(Él <b>fue arrestado</b> - obviamente por la policía).</span></li>
+                        <li><b>Cuando el objeto es más importante:</b> <i>"The President <b>was elected</b> yesterday."</i> <span class="translation">(El Presidente <b>fue elegido</b> ayer).</span></li>
+                        <li><b>En contextos formales o científicos:</b> <i>"The experiment <b>was conducted</b> in 2020."</i> <span class="translation">(El experimento <b>fue conducido</b> en 2020).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block third-border">
+                    <h3>⚠️ Casos Especiales</h3>
+                    
+                    <p><b>1. Verbos con dos objetos (give, send, offer, etc.):</b></p>
+                    <ul>
+                        <li><i>Active:</i> "She gave <b>me</b> <b>a gift</b>."</li>
+                        <li><i>Passive 1 (persona como sujeto):</i> "<b>I was given</b> a gift." <span class="translation">(Me fue dado un regalo).</span></li>
+                        <li><i>Passive 2 (cosa como sujeto):</i> "<b>A gift was given</b> to me." <span class="translation">(Un regalo me fue dado).</span></li>
+                    </ul>
+
+                    <p><b>2. Verbos con preposición (look after, talk about, etc.):</b></p>
+                    <ul>
+                        <li><i>Active:</i> "Someone <b>looks after</b> the children."</li>
+                        <li><i>Passive:</i> "The children <b>are looked after</b>." <span class="translation">(Los niños <b>son cuidados</b>).</span></li>
+                        <li class="note"><b>Note:</b> La preposición <b>NO</b> se elimina: <i>The problem <b>was talked about</b>.</i></li>
+                    </ul>
+
+                    <p><b>3. Get + Past Participle (informal):</b></p>
+                    <ul>
+                        <li><i>"I <b>got fired</b> from my job."</i> <span class="translation">(Me <b>despidieron</b>).</span></li>
+                        <li><i>"They <b>got married</b> last year."</i> <span class="translation">(Ellos <b>se casaron</b> el año pasado).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block first-border">
+                    <h3>📊 Comparación Rápida: Active vs Passive</h3>
+
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Active (Activa - enfoque en el sujeto)</th>
+                                    <th>Passive (Pasiva - enfoque en la acción/objeto)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i>Shakespeare <b>wrote</b> Hamlet.</i></td>
+                                    <td><i>Hamlet <b>was written by</b> Shakespeare.</i></td>
+                                </tr>
+                                <tr>
+                                    <td><i>Someone <b>is watching</b> us.</i></td>
+                                    <td><i>We <b>are being watched</b>.</i></td>
+                                </tr>
+                                <tr>
+                                    <td><i>They <b>will build</b> a new hospital.</i></td>
+                                    <td><i>A new hospital <b>will be built</b>.</i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>🎯 Errores Comunes a Evitar</h3>
+                    <ul>
+                        <li>❌ <i>The window <b>was broke</b>.</i> <br> ✅ <i>The window <b>was broken</b>.</i> (Siempre past participle)</li>
+                        <li>❌ <i>The house <b>is build</b> in 1990.</i> <br> ✅ <i>The house <b>was built</b> in 1990.</i> (Conjuga bien el verbo to be)</li>
+                        <li>❌ <i>English <b>is speaked</b> here.</i> <br> ✅ <i>English <b>is spoken</b> here.</i> (Past participle correcto)</li>
+                        <li>❌ <i>The problem <b>was discussed about</b>.</i> <br> ✅ <i>The problem <b>was discussed</b>.</i> (No añadas preposición extra)</li>
+                    </ul>
+                </div>
+
+                <p class="note"><b>Grammar Hack:</b> Para formar la pasiva, siempre lleva el verbo <b>TO BE</b> en el mismo tiempo que la activa + el <b>PAST PARTICIPLE</b> del verbo principal. ¡El past participle es la tercera columna de los verbos irregulares!</p>
+                <br>
+            </div>
+        </div>
+
+        <!-- UNIDAD 13: Relative pronouns -->
+        <div id="unit13" class="unit-container">
+            <div class="background">
+                <h1>👥 Unit 13: Relative pronouns</h1>
+            </div>
+            
+            <div class="unit-content">
+                <h2>👥 Relative Pronouns: Tabla Completa</h2>
+                <p>Los pronombres relativos conectan oraciones y reemplazan a un sustantivo mencionado anteriormente (el antecedente).</p>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>Complete Relative Pronouns Guide</caption>
+                        <thead>
+                            <tr>
+                                <th>Pronoun</th>
+                                <th>Usage / Cuándo se usa</th>
+                                <th>Meaning (Español)</th>
+                                <th>Example (English)</th>
+                                <th>Traducción (Español)</th>
+                                <th>Extra Info</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>WHO</b></td>
+                                <td>Para personas (como sujeto)</td>
+                                <td>Quien / Quienes / Que</td>
+                                <td><i>The girl <b>who</b> sings is my sister.</i></td>
+                                <td>La chica <b>que</b> canta es mi hermana.</td>
+                                <td>Solo para personas. Es el más común.</td>
+                            </tr>
+                            <tr>
+                                <td><b>WHOM</b></td>
+                                <td>Para personas (como objeto, formal)</td>
+                                <td>A quien / Con quien / Que</td>
+                                <td><i>The man <b>to whom</b> I spoke is my boss.</i></td>
+                                <td>El hombre <b>con quien</b> hablé es mi jefe.</td>
+                                <td>Uso formal. En cotidiano se usa "who" o se omite.</td>
+                            </tr>
+                            <tr>
+                                <td><b>WHOSE</b></td>
+                                <td>Posesión (para personas y cosas)</td>
+                                <td>Cuyo / Cuya / Cuyos / Cuyas</td>
+                                <td><i>That's the student <b>whose</b> parents are doctors.</i></td>
+                                <td>Ese es el estudiante <b>cuyos</b> padres son doctores.</td>
+                                <td>Indica pertenencia. Siempre va seguido de un sustantivo.</td>
+                            </tr>
+                            <tr>
+                                <td><b>WHICH</b></td>
+                                <td>Para cosas y animales</td>
+                                <td>El cual / La cual / Lo cual / Que</td>
+                                <td><i>The movie, <b>which</b> was released yesterday, is great.</i></td>
+                                <td>La película, <b>que</b> se estrenó ayer, es genial.</td>
+                                <td>Se usa con comas para info no esencial o sin comas para info esencial.</td>
+                            </tr>
+                            <tr>
+                                <td><b>THAT</b></td>
+                                <td>Para personas, cosas y animales</td>
+                                <td>Que</td>
+                                <td><i>I lost the book <b>that</b> you gave me.</i></td>
+                                <td>Perdí el libro <b>que</b> me diste.</td>
+                                <td>El más versátil. No se usa en cláusulas no esenciales (con comas).</td>
+                            </tr>
+                            <tr>
+                                <td><b>WHERE</b></td>
+                                <td>Para lugares</td>
+                                <td>Donde / En donde</td>
+                                <td><i>This is the house <b>where</b> I grew up.</i></td>
+                                <td>Esta es la casa <b>donde</b> crecí.</td>
+                                <td>Reemplaza "in which" o "at which" para lugares.</td>
+                            </tr>
+                            <tr>
+                                <td><b>WHEN</b></td>
+                                <td>Para tiempos / momentos</td>
+                                <td>Cuando / En que</td>
+                                <td><i>I remember the day <b>when</b> we first met.</i></td>
+                                <td>Recuerdo el día <b>cuando</b> nos conocimos.</td>
+                                <td>Reemplaza "on which", "in which" para tiempo.</td>
+                            </tr>
+                            <tr>
+                                <td><b>WHY</b></td>
+                                <td>Para razones / causas</td>
+                                <td>Por qué / Por lo que / La razón por la que</td>
+                                <td><i>Tell me the reason <b>why</b> you're late.</i></td>
+                                <td>Dime la razón <b>por la que</b> llegaste tarde.</td>
+                                <td>Suele usarse con "reason" (the reason why).</td>
+                            </tr>
+                            <tr>
+                                <td><b>WHAT</b></td>
+                                <td>Para cosas indefinidas / "lo que"</td>
+                                <td>Lo que</td>
+                                <td><i>I understand <b>what</b> you mean.</i></td>
+                                <td>Entiendo <b>lo que</b> quieres decir.</td>
+                                <td>No tiene antecedente explícito. Significa "the thing that".</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cond-block first-border">
+                    <h3>📌 Reglas importantes:</h3>
+                    <ul>
+                        <li><b>That vs. Which:</b> En inglés americano, se prefiere <b>that</b> para información esencial (sin comas) y <b>which</b> para información adicional (con comas).</li>
+                        <li><b>Omisión del pronombre:</b> En cláusulas esenciales, cuando el pronombre es el objeto, se puede omitir: <i>"The book (that) I read"</i> → "El libro que leí".</li>
+                        <li><b>Whom:</b> Siempre va precedido de preposición en inglés formal: <i>to whom, with whom, for whom</i>.</li>
+                        <li><b>What:</b> No lleva antecedente. No se dice "Everything what" sino "Everything that".</li>
+                    </ul>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>⚡ Ejemplos adicionales:</h3>
+                    <ul>
+                        <li><b>Where:</b> <i>"This is the restaurant <b>where</b> we had dinner."</i> <span class="translation">(Este es el restaurante <b>donde</b> cenamos).</span></li>
+                        <li><b>When:</b> <i>"Sunday is the day <b>when</b> I relax."</i> <span class="translation">(Domingo es el día <b>en que</b> descanso).</span></li>
+                        <li><b>Why:</b> <i>"That's <b>why</b> I called you."</i> <span class="translation">(Por <b>eso</b> te llamé / Esa es la razón <b>por la que</b> te llamé).</span></li>
+                        <li><b>What:</b> <i>"<b>What</b> happened is a mystery."</i> <span class="translation">(<b>Lo que</b> pasó es un misterio).</span></li>
+                    </ul>
+                </div>
+
+                <p class="note"><b>Grammar Tip:</b> Para saber si necesitas <b>who</b> u <b>whom</b>, pregúntate: ¿El pronombre es el sujeto (quien hace la acción) o el objeto (quien recibe la acción)? Sujeto = Who, Objeto = Whom.</p>
+                <br>
+            </div>
+        </div>
+
+        <!-- UNIDAD 14: Indefinite pronouns -->
+        <div id="unit14" class="unit-container">
+            <div class="background">
+                <h1>❓ Unit 14: Indefinite pronouns</h1>
+            </div>
+            
+            <div class="unit-content">
+                <h2>❓ Indefinite Pronouns: Alguien, Nadie, Todo, Nada</h2>
+                <p>Los pronombres indefinidos se refieren a personas o cosas de manera no específica. No señalan a un ser concreto, sino a algo general.</p>
+
+                <div class="cond-block first-border">
+                    <h3>📌 La Regla de Oro: Some / Any / No / Every</h3>
+                    
+                    <div class="category-grid">
+                        <div class="category-card green">
+                            <div class="category-icon">✅</div>
+                            <div class="category-title">SOME</div>
+                            <div class="category-description">Afirmativo / Ofrecimientos</div>
+                        </div>
+                        
+                        <div class="category-card yellow">
+                            <div class="category-icon">❓</div>
+                            <div class="category-title">ANY</div>
+                            <div class="category-description">Preguntas / Negativo</div>
+                        </div>
+                        
+                        <div class="category-card red">
+                            <div class="category-icon">🚫</div>
+                            <div class="category-title">NO</div>
+                            <div class="category-description">Negativo (sin "not")</div>
+                        </div>
+                        
+                        <div class="category-card white">
+                            <div class="category-icon">🌍</div>
+                            <div class="category-title">EVERY</div>
+                            <div class="category-description">Totalidad</div>
+                        </div>
+                    </div>
+                    
+                    <p>Combinando estas palabras con <b>body/one</b> (personas), <b>thing</b> (cosas) y <b>where</b> (lugares), obtenemos todos los pronombres indefinidos.</p>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <caption>Complete Indefinite Pronouns Matrix</caption>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>SOME (afirmativo)</th>
+                                <th>ANY (preguntas/negativo)</th>
+                                <th>NO (negativo)</th>
+                                <th>EVERY (todos)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Personas (body/one)</b></td>
+                                <td>
+                                    <b>Someone / Somebody</b><br>
+                                    <small>Alguien</small>
+                                </td>
+                                <td>
+                                    <b>Anyone / Anybody</b><br>
+                                    <small>Alguien / Nadie (con not)</small>
+                                </td>
+                                <td>
+                                    <b>No one / Nobody</b><br>
+                                    <small>Nadie</small>
+                                </td>
+                                <td>
+                                    <b>Everyone / Everybody</b><br>
+                                    <small>Todos / Todo el mundo</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Cosas (thing)</b></td>
+                                <td>
+                                    <b>Something</b><br>
+                                    <small>Algo</small>
+                                </td>
+                                <td>
+                                    <b>Anything</b><br>
+                                    <small>Algo / Nada (con not)</small>
+                                </td>
+                                <td>
+                                    <b>Nothing</b><br>
+                                    <small>Nada</small>
+                                </td>
+                                <td>
+                                    <b>Everything</b><br>
+                                    <small>Todo</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Lugares (where)</b></td>
+                                <td>
+                                    <b>Somewhere</b><br>
+                                    <small>En algún lugar</small>
+                                </td>
+                                <td>
+                                    <b>Anywhere</b><br>
+                                    <small>En cualquier lugar / En ningún lugar (con not)</small>
+                                </td>
+                                <td>
+                                    <b>Nowhere</b><br>
+                                    <small>En ningún lugar</small>
+                                </td>
+                                <td>
+                                    <b>Everywhere</b><br>
+                                    <small>En todas partes</small>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>1️⃣ SOME: Afirmativo y Ofrecimientos</h3>
+                    <div class="formula-box"><strong>Se usa en oraciones afirmativas y en ofrecimientos/peticiones</strong></div>
+                    
+                    <p><b>Personas:</b></p>
+                    <ul>
+                        <li><i>"<b>Someone</b> is at the door."</i> <span class="translation">(<b>Alguien</b> está en la puerta).</span></li>
+                        <li><i>"<b>Somebody</b> called you."</i> <span class="translation">(<b>Alguien</b> te llamó).</span></li>
+                    </ul>
+
+                    <p><b>Cosas:</b></p>
+                    <ul>
+                        <li><i>"I need <b>something</b> to eat."</i> <span class="translation">(Necesito <b>algo</b> para comer).</span></li>
+                        <li><i>"There's <b>something</b> in my bag."</i> <span class="translation">(Hay <b>algo</b> en mi bolsa).</span></li>
+                    </ul>
+
+                    <p><b>Lugares:</b></p>
+                    <ul>
+                        <li><i>"Let's go <b>somewhere</b> nice."</i> <span class="translation">(Vamos a <b>algún lugar</b> bonito).</span></li>
+                        <li><i>"I left my keys <b>somewhere</b>."</i> <span class="translation">(Dejé mis llaves <b>en algún lugar</b>).</span></li>
+                    </ul>
+
+                    <p><b>Ofrecimientos y peticiones (preguntas con SOME):</b></p>
+                    <ul>
+                        <li><i>"Would you like <b>something</b> to drink?"</i> <span class="translation">(¿Te gustaría <b>algo</b> de tomar?).</span></li>
+                        <li><i>"Can <b>someone</b> help me?"</i> <span class="translation">(¿Puede <b>alguien</b> ayudarme?).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block third-border">
+                    <h3>2️⃣ ANY: Preguntas y Negativos</h3>
+                    <div class="formula-box"><strong>Se usa en preguntas y con "not" para negar</strong></div>
+                    
+                    <p><b>En preguntas:</b></p>
+                    <ul>
+                        <li><i>"Is <b>anyone</b> home?"</i> <span class="translation">(¿Hay <b>alguien</b> en casa?).</span></li>
+                        <li><i>"Do you have <b>anything</b> to say?"</i> <span class="translation">(¿Tienes <b>algo</b> que decir?).</span></li>
+                        <li><i>"Did you go <b>anywhere</b> yesterday?"</i> <span class="translation">(¿Fuiste <b>a algún lugar</b> ayer?).</span></li>
+                    </ul>
+
+                    <p><b>En negativos (con not):</b></p>
+                    <ul>
+                        <li><i>"I don't know <b>anyone</b> here."</i> <span class="translation">(No conozco a <b>nadie</b> aquí).</span></li>
+                        <li><i>"She doesn't have <b>anything</b> to do."</i> <span class="translation">(Ella no tiene <b>nada</b> que hacer).</span></li>
+                        <li><i>"I can't find my keys <b>anywhere</b>."</i> <span class="translation">(No puedo encontrar mis llaves <b>en ningún lugar</b>).</span></li>
+                    </ul>
+
+                    <p><b>Significado de "cualquier":</b></p>
+                    <ul>
+                        <li><i>"<b>Anyone</b> can do it."</i> <span class="translation">(<b>Cualquiera</b> puede hacerlo).</span></li>
+                        <li><i>"You can choose <b>anything</b>."</i> <span class="translation">(Puedes elegir <b>cualquier cosa</b>).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block first-border">
+                    <h3>3️⃣ NO: Negativo sin "NOT"</h3>
+                    <div class="formula-box"><strong>NO + pronombre = verbo afirmativo con significado negativo</strong></div>
+                    <p class="note"><b>Importante:</b> En inglés, no se usan dos negativos en la misma oración. Usamos NO en lugar de NOT + ANY.</p>
+                    
+                    <ul>
+                        <li><i>"<b>No one</b> / <b>Nobody</b> came to the party."</i> <span class="translation">(<b>Nadie</b> vino a la fiesta).</span></li>
+                        <li>✅ <i>Nobody came.</i> (correcto)</li>
+                        <li>❌ <i>Didn't nobody come.</i> (incorrecto - doble negativo)</li>
+                    </ul>
+
+                    <ul>
+                        <li><i>"I have <b>nothing</b> to say."</i> <span class="translation">(No tengo <b>nada</b> que decir).</span></li>
+                        <li>✅ <i>I have nothing.</i> / <i>I don't have anything.</i></li>
+                    </ul>
+
+                    <ul>
+                        <li><i>"There's <b>nowhere</b> to go."</i> <span class="translation">(No hay <b>ningún lugar</b> a donde ir / <b>En ningún lugar</b> hay para ir).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>4️⃣ EVERY: Totalidad</h3>
+                    <div class="formula-box"><strong>Every = todos (singular en inglés)</strong></div>
+                    <p class="note"><b>¡Atención!</b> Everyone/Everybody es singular en inglés, aunque signifique "todos".</p>
+                    
+                    <ul>
+                        <li><i>"<b>Everyone</b> / <b>Everybody</b> <u>is</u> here."</i> <span class="translation">(<b>Todos</b> <u>están</u> aquí).</span></li>
+                        <li>✅ <i>Everyone <b>is</b> happy.</i> (correcto - verbo en singular)</li>
+                        <li>❌ <i>Everyone <b>are</b> happy.</i> (incorrecto)</li>
+                    </ul>
+
+                    <ul>
+                        <li><i>"<b>Everything</b> <u>is</u> perfect."</i> <span class="translation">(<b>Todo</b> <u>está</u> perfecto).</span></li>
+                        <li><i>"I've looked <b>everywhere</b>."</i> <span class="translation">(He buscado <b>en todas partes</b>).</span></li>
+                    </ul>
+                </div>
+
+                <div class="cond-block third-border">
+                    <h3>⚠️ Reglas Clave y Errores Comunes</h3>
+                    
+                    <p><b>1. Singular siempre:</b> Todos los indefinite pronouns son SINGULARES.</p>
+                    <ul>
+                        <li><i>"<b>Someone</b> <u>is</u> waiting."</i> (Alguien espera)</li>
+                        <li><i>"<b>Nothing</b> <u>matters</u>."</i> (Nada importa)</li>
+                        <li><i>"<b>Everybody</b> <u>needs</u> love."</i> (Todos necesitan amor)</li>
+                    </ul>
+
+                    <p><b>2. Adjetivos van DESPUÉS del pronombre:</b></p>
+                    <ul>
+                        <li><i>"I need <b>something special</b>."</i> <span class="translation">(Necesito algo especial).</span></li>
+                        <li><i>"Is there <b>anything new</b>?"</i> <span class="translation">(¿Hay algo nuevo?).</span></li>
+                        <li><i>"I'm looking for <b>somewhere quiet</b>."</i> <span class="translation">(Busco algún lugar tranquilo).</span></li>
+                    </ul>
+
+                    <p><b>3. No doble negativos:</b> En inglés, solo un negativo por oración.</p>
+                    <ul>
+                        <li>✅ <i>"I don't know <b>anything</b>."</i></li>
+                        <li>✅ <i>"I know <b>nothing</b>."</i></li>
+                        <li>❌ <i>"I don't know <b>nothing</b>."</i> (incorrecto)</li>
+                    </ul>
+                </div>
+
+                <div class="cond-block first-border">
+                    <h3>📊 Tabla Comparativa de Usos</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pronombre</th>
+                                    <th>Significado</th>
+                                    <th>Tipo de oración</th>
+                                    <th>Ejemplo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><b>Someone / Somebody</b></td>
+                                    <td>Alguien</td>
+                                    <td>Afirmativo</td>
+                                    <td>Someone is calling.</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Anyone / Anybody</b></td>
+                                    <td>Alguien / Nadie</td>
+                                    <td>Pregunta / Negativo</td>
+                                    <td>Is anyone there? / I don't see anybody.</td>
+                                </tr>
+                                <tr>
+                                    <td><b>No one / Nobody</b></td>
+                                    <td>Nadie</td>
+                                    <td>Negativo (sin not)</td>
+                                    <td>Nobody came.</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Everyone / Everybody</b></td>
+                                    <td>Todos</td>
+                                    <td>Afirmativo/Negativo</td>
+                                    <td>Everybody is here.</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Something</b></td>
+                                    <td>Algo</td>
+                                    <td>Afirmativo</td>
+                                    <td>I want something.</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Anything</b></td>
+                                    <td>Algo / Nada</td>
+                                    <td>Pregunta / Negativo</td>
+                                    <td>Do you need anything? / I don't need anything.</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Nothing</b></td>
+                                    <td>Nada</td>
+                                    <td>Negativo (sin not)</td>
+                                    <td>I have nothing.</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Everything</b></td>
+                                    <td>Todo</td>
+                                    <td>Afirmativo/Negativo</td>
+                                    <td>Everything is fine.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="cond-block second-border">
+                    <h3>🎯 Ejercicio Mental: Elige el correcto</h3>
+                    <ul>
+                        <li><i>"I looked <b>everywhere / somewhere</b> but I couldn't find my phone."</i> <span class="translation">(everywhere - Busqué en todas partes pero no encontré mi teléfono).</span></li>
+                        <li><i>"Would you like <b>something / anything</b> to drink?"</i> <span class="translation">(something - ofrecimiento).</span></li>
+                        <li><i>"There's <b>nobody / anybody</b> in the room."</i> <span class="translation">(nobody - No hay nadie).</span></li>
+                        <li><i>"<b>Everyone / Someone</b> is special in their own way."</i> <span class="translation">(Everyone - Todos son especiales).</span></li>
+                    </ul>
+                </div>
+
+                <p class="note"><b>Grammar Hack:</b> Para recordar: <b>Some</b> para afirmativo (como "sí"), <b>Any</b> para preguntas y negativos (como "¿?"), <b>No</b> para negativo fuerte sin "not", y <b>Every</b> para totalidad. ¡Y siempre singular!</p>
+                <br>
+            </div>
+        </div>
 
     </div>
-
-    <hr>
-    <div class="background unit-header" data-target="unit12">
-        <h1>🚀 Adverbs</h1>
-    </div>
-    <hr>
-    <div id="unit12" class="unit-content">
-
-    </div>
-
-    <hr>
-    <div class="background unit-header" data-target="unit13">
-        <h1>❓ Indefinite pronouns</h1>
-    </div>
-    <hr>
-    <div id="unit13" class="unit-content">
-
-    </div>
-
 </body>
 </html>
