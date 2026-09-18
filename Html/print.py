@@ -47,7 +47,7 @@ def make_print_html(input_path):
 with sync_playwright() as p:
     browser = p.chromium.launch()
 
-    for fname in ['A1', 'A2', 'Vocabulary']:
+    for fname in ['B1']:
         print(f"Procesando {fname}...")
 
         html_content = make_print_html(f'{fname}.html')
